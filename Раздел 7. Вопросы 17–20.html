@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Универсальные сопроводительные запросы — Раздел 7. Вопросы 17–20</title>
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#fff; --ink:#1b2430; --muted:#5b6775;
+    --line:#dde3e9; --accent:#0f4c81; --accent2:#e9f1f8;
+    --ok:#1e7a46; --warn:#8a5a00; --bad:#a32020;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 48px;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{background:linear-gradient(135deg,#0f4c81,#123a5c);color:#fff;padding:30px 0 24px;margin-bottom:22px}
+  header h1{margin:0 0 6px;font-size:24px;line-height:1.3}
+  header .date{opacity:.9;font-size:13.5px}
+  .req{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:16px;
+       background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+       border-radius:10px;padding:12px 16px;font-size:13px}
+  .req b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;opacity:.85}
+  section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          padding:18px 18px 22px;margin:0 0 20px}
+  h2{font-size:19px;margin:0 0 6px;color:var(--accent)}
+  h3{font-size:16px;margin:20px 0 8px}
+  .lead{color:var(--muted);font-size:14px;margin:0 0 12px}
+  .tbl-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+  th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top;text-align:left}
+  th{background:var(--accent2);color:#123a5c;font-size:12.5px;font-weight:600}
+  tr:nth-child(even) td{background:#fbfcfd}
+  a{color:#0b5fa5}
+  .copybox{border:1px solid var(--line);border-radius:10px;margin:12px 0 18px;overflow:hidden}
+  .copyhead{display:flex;align-items:center;justify-content:space-between;gap:12px;
+            background:#f2f6fa;border-bottom:1px solid var(--line);padding:10px 14px}
+  .copyhead span{font-weight:600;font-size:14px;color:#123a5c}
+  button.copy{cursor:pointer;border:1px solid #b9cfe1;background:#fff;color:#0f4c81;
+              border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+  button.copy:hover{background:var(--accent2)}
+  button.copy.done{background:#e4f5ea;border-color:#b9e3c8;color:var(--ok)}
+  .doc{white-space:pre-wrap;word-wrap:break-word;padding:16px 18px;font-size:14px;line-height:1.6}
+  .note{background:#fffaf0;border-left:4px solid #e0a800;padding:10px 14px;
+        border-radius:0 8px 8px 0;margin:12px 0;font-size:13.5px}
+  ul{margin:8px 0 0 20px;padding:0}
+  li{margin:4px 0}
+  .tag{display:inline-block;border-radius:999px;padding:2px 8px;font-size:11.5px;
+       font-weight:600;white-space:nowrap}
+  .hi{background:#e4f5ea;color:var(--ok);border:1px solid #b9e3c8}
+  .mid{background:#fff3df;color:var(--warn);border:1px solid #f0d6a8}
+  .lo{background:#fde7e7;color:var(--bad);border:1px solid #f2c2c2}
+  .check td:first-child{width:34px;text-align:center;font-size:16px;color:#0f4c81}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:22px}
+  @media (max-width:760px){
+    .req{grid-template-columns:1fr}
+    header h1{font-size:20px}
+    .copyhead{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Универсальные сопроводительные запросы — Раздел 7. Вопросы 17–20</h1>
+    <div class="date">Дата подготовки: 26 ноября 2026 г. · шаблоны для самостоятельной рассылки контрагентам</div>
+    <div class="req">
+      <div><b>Закупщик</b>天津瑞八国际贸易有限公司<br>Tianjin Ruiba International Trade Co., Ltd.</div>
+      <div><b>Тип</b>有限责任公司（外国自然人独资）</div>
+      <div><b>Профиль</b>摩托车及零配件批发/零售；货物进出口；进出口代理；供应链管理服务；国内贸易代理；汽车零配件批发/零售</div>
+      <div><b>Роль в запросах</b>采购商 — оптовая закупка на внутреннем рынке Китая: цены, наличие, MOQ, сроки производства, аналоги (摩配副厂件)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="where">
+  <h2>Куда отправлять (справочно)</h2>
+  <p class="lead">Сводка по четырём вопросам: контрагент, локация, профиль и источник.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:6%">Вопрос</th>
+        <th style="width:13%">Тема</th>
+        <th style="width:27%">Контрагент (CN / EN)</th>
+        <th style="width:16%">Локация</th>
+        <th style="width:22%">Профиль</th>
+        <th style="width:16%">Источник</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>17</td>
+          <td>Шины Metzeler</td>
+          <td>东莞市赛万达贸易有限公司<br>Dongguan Saiwanda Trading Co., Ltd.</td>
+          <td>Дунгуань, Гуандун</td>
+          <td>Импорт мотошин крупнокубатурных мотоциклов, масел, экипировки (низкая достоверность)</td>
+          <td><a href="https://www.zhipin.com/gongsi/ae6fe1897314222f0HR-3t-1EA~~.html" target="_blank" rel="noopener">zhipin.com</a></td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>Амортизаторы и вилки Öhlins</td>
+          <td>格时图赛车配件中心<br>Gusto (G-Stone) Racing Parts Center</td>
+          <td>Гуандун; сервис — Шэньчжэнь, трасса Guangdong International Circuit</td>
+          <td>Официальный генеральный агент Öhlins в Китае, импорт, установка, сервис</td>
+          <td><a href="http://www.gusto.com.cn/brand?classid=3&amp;id=48" target="_blank" rel="noopener">gusto.com.cn</a></td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>Закупка через Webike China</td>
+          <td>广州威百客电子商务有限公司<br>Guangzhou Webike E-commerce Co., Ltd.</td>
+          <td>Гуанчжоу (Юэсю), Гуандун</td>
+          <td>Официальное представительство Webike; розница/мелкий опт на внутреннем рынке Китая</td>
+          <td><a href="https://shop.webike-china.cn/" target="_blank" rel="noopener">shop.webike-china.cn</a></td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>OEM/ODM по брендам мото и ATV</td>
+          <td>Chongqing Moracing; Ningbo Borske; Zibo Kuoqian; NihaoMotor; Chongqing Jili Yunfeng; Zhejiang Kayo; Chongqing Bright</td>
+          <td>Чунцин, Нинбо, Цзыбо, Чжэцзян</td>
+          <td>OEM/ODM и aftermarket-запчасти для Voge, CFMOTO, QJMOTOR, Zontes, Kayo, Benda и др.</td>
+          <td><a href="https://cqmoracing.en.made-in-china.com/" target="_blank" rel="noopener">Moracing</a>; <a href="https://www.borske.com/portfolio_category/products/brand-motorcycle-parts/for-benda" target="_blank" rel="noopener">Borske</a>; <a href="https://www.kuoqianparts.com/" target="_blank" rel="noopener">Zibo Kuoqian</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="t17">
+  <h2>Шаблон запроса №17: Шины Metzeler (наличие канала поставки)</h2>
+  <p class="lead">Универсальный запрос о возможности поставки Metzeler и альтернативах в аналогичных размерах.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru17', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru17">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит предоставить информацию по следующему вопросу.
+
+Предмет запроса: шины Metzeler для мотоциклов. Конкретные модели и размеры — по нашему списку (просим также прислать актуальный размерный ряд, доступный к заказу).
+
+Просим подтвердить:
+1. Возможность поставки шин Metzeler и указать, являетесь ли вы официальным каналом (импортёр/дилер) или работаете через посредников.
+2. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+3. Наличие на складе; при отсутствии — срок поставки.
+4. Минимальный заказ (MOQ) и скидки за объём.
+5. Если Metzeler недоступен — просим предложить альтернативы в аналогичных размерах (CST, Timsun, Kenda) с указанием бренда, модели и артикула.
+6. Условия оплаты.
+7. Упаковка: neutral packing или private label; стоимость упаковки.
+8. Сертификаты: DOT, ECE (просьба приложить сканы).
+9. Каталог/прайс-лист и таблицу «Metzeler → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn17', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn17">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下事项向贵司咨询。
+
+询价品项：摩托车象牌（Metzeler）轮胎。具体型号与规格按我司清单，请同时提供可供货的规格表。
+
+请确认以下事项：
+1. 是否可供货 Metzeler 轮胎，并说明贵司是否为官方渠道（进口商/经销商），或通过其他渠道供货。
+2. 单价（人民币，含税/未税，并注明税率）。
+3. 现货情况及无现货时的交期。
+4. 最小起订量（MOQ）及数量折扣。
+5. 如 Metzeler 无法供货，请提供同等规格的替代品牌（正新 CST、腾森 Timsun、建大 Kenda），并注明品牌、型号及料号。
+6. 付款条件。
+7. 包装方式：中性包装或贴牌，并注明包装费用。
+8. 认证资料：DOT、ECE，请附证书扫描件。
+9. 产品目录/价格表，以及「Metzeler → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+  <div class="note">Не утверждайте в переписке, что Metzeler официально поставляется в Китай: статус канала подтверждается только ответом контрагента и документами.</div>
+</section>
+
+<section id="t18">
+  <h2>Шаблон запроса №18: Амортизаторы и вилки Öhlins</h2>
+  <p class="lead">Запрос к официальному каналу: модель, длина, тип крепления, пружина, гарантия и сервис.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru18', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru18">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит предоставить коммерческое предложение по следующему вопросу.
+
+Предмет запроса: амортизаторы и вилки Öhlins для мотоциклов. Модель, длина, тип крепления и характеристики пружины — по нашему списку.
+
+Просим подтвердить:
+1. Являетесь ли вы официальным каналом поставки Öhlins в Китае (генеральный агент/авторизованный дилер); при работе через посредника — указать это.
+2. Возможность поставки указанных моделей; при отсутствии — срок поставки под заказ.
+3. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+4. Наличие на складе, MOQ и скидки за объём.
+5. Гарантийный срок, условия гарантии и наличие сервисных центров (города), порядок обслуживания и ремонта.
+6. Условия оплаты.
+7. Упаковка: neutral packing или private label; стоимость упаковки.
+8. Сертификаты и документы, подтверждающие происхождение и подлинность.
+9. Каталог/прайс-лист и таблицу «Öhlins → ваш артикул».
+
+Альтернативы просим предлагать только по отдельному запросу.
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn18', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn18">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下事项向贵司询价。
+
+询价品项：摩托车 Öhlins 减震器及前叉。型号、长度、安装方式及弹簧参数按我司清单。
+
+请确认以下事项：
+1. 贵司是否为 Öhlins 在中国的官方渠道（总代理/授权经销商）；如通过其他渠道供货，请说明。
+2. 所列型号是否可供货；如无现货，请说明订货交期。
+3. 单价（人民币，含税/未税，并注明税率）。
+4. 现货情况、最小起订量（MOQ）及数量折扣。
+5. 质保期限、保修条件，以及售后服务网点（城市）、维修与保养流程。
+6. 付款条件。
+7. 包装方式：中性包装或贴牌，并注明包装费用。
+8. 认证及可证明来源与正品性的文件。
+9. 产品目录/价格表，以及「Öhlins → 贵司料号」对照表。
+
+替代品牌请按我司另行提出的需求提供。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="t19">
+  <h2>Шаблон запроса №19: Закупка через Webike China как посредник</h2>
+  <p class="lead">Агентский выкуп на внутреннем рынке Китая: список позиций, комиссия, сроки, оплата, консолидация.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru19', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru19">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и рассматривает возможность агентского выкупа позиций в Webike China.
+
+Предмет запроса: выкуп позиций по нашему списку (артикулы и ссылки на карточки Webike China прилагаются).
+
+Просим указать:
+1. Возможность оказания услуги агентского выкупа (采购代理) на внутреннем рынке Китая.
+2. Комиссию агента в процентах и порядок её расчёта (от суммы заказа, фиксированная ставка и т.п.).
+3. Срок выкупа: от подтверждения списка до поступления товара на ваш склад.
+4. Порядок оплаты в CNY: предоплата, доплата, срок действия расчёта.
+5. Упаковка и консолидация: возможность объединения позиций из разных заказов в одну партию, стоимость упаковки.
+6. Проверка при получении: сверка артикулов, количества, комплектности и внешнего состояния; порядок действий при расхождениях.
+7. Ограничения: позиции, которые вы не выкупаете (крупногабаритные, опасные, с ограничениями продавца).
+8. Порядок возврата/замены при обнаружении дефекта.
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn19', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn19">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就 Webike 中国站商品代购事宜向贵司咨询。
+
+询价事项：按我司清单（料号及 Webike 中国站商品链接另附）代为采购。
+
+请说明以下事项：
+1. 是否可提供中国境内代购（采购代理）服务。
+2. 佣金比例及计算方式（按订单金额比例或固定费用等）。
+3. 采购周期：自清单确认至货物到达贵司仓库的时间。
+4. 人民币付款方式：预付款、尾款及报价有效期。
+5. 包装与合并：是否可将不同订单商品合并打包，包装费用如何计算。
+6. 到货核对：料号、数量、完整性及外观核对流程；出现差异时的处理方式。
+7. 限制范围：不代购的商品类型（超大件、危险品、卖家限购等）。
+8. 出现质量问题时的退换货流程。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="t20">
+  <h2>Шаблон запроса №20: OEM/ODM и запчасти для китайских брендов мото и ATV</h2>
+  <p class="lead">Voge, CFMOTO, QJMOTOR, Zontes, Kayo, Regulmoto, Motoland, Benda — перечень дан как ориентир.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru20', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru20">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит предоставить информацию о поставках OEM/ODM и aftermarket-запчастей.
+
+Бренды-ориентиры: Voge, CFMOTO, QJMOTOR, Zontes, Kayo, Regulmoto, Motoland, Benda.
+Типовые узлы: двигатель и электрика; пластик и элементы кузова; подвеска и рулевое; расходники (фильтры, тормозные колодки, сцепление); цепь и звёзды.
+
+Просим указать:
+1. Какие бренды и узлы вы закрываете (по каждой позиции — наличие или срок производства).
+2. Предлагаете ли оригинальные детали (OEM) и качественные аналоги (摩配副厂件); для аналогов — бренд и артикул.
+3. Минимальный заказ (MOQ) и сроки производства по группам.
+4. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога); скидки за объём.
+5. Возможность работы по образцу или по артикулу заказчика.
+6. Условия оплаты.
+7. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+8. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+9. Каталог/прайс-лист и кросс-таблицу «бренд → ваш артикул».
+
+Примечание: Regulmoto и Motoland — торговые марки, а не заводы. По ним просим подбирать позиции по модели и узлу, а не по названию «завода».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn20', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn20">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就 OEM/ODM 及副厂件供货情况向贵司咨询。
+
+参考品牌：Voge、CFMOTO、QJMOTOR、Zontes、Kayo、Regulmoto、Motoland、Benda。
+主要部件：发动机及电器；塑料件及车身；悬挂及转向；易损件（滤清器、刹车片、离合器）；链条及链轮。
+
+请说明以下事项：
+1. 可覆盖的品牌及部件（请逐项注明现货或生产周期）。
+2. 是否提供原厂件（OEM）及优质副厂件（摩配副厂件）；副厂件请注明品牌及料号。
+3. 各品类的最小起订量（MOQ）及生产周期。
+4. 单价（人民币，含税/未税，并注明税率）及数量折扣。
+5. 是否可按样品或我司料号供货。
+6. 付款条件。
+7. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+8. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+9. 产品目录/价格表，以及「品牌 → 贵司料号」对照表。
+
+说明：Regulmoto、Motoland 为贸易品牌，并非整车厂；请按车型及部件匹配，而非按品牌工厂查询。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="ref">
+  <h2>Справочная таблица по вопросам 17–20</h2>
+  <p class="lead">Статусы каналов и профилей — по состоянию на дату подготовки.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:6%">Вопрос</th>
+        <th style="width:15%">Тема</th>
+        <th style="width:30%">Контрагент (CN / EN)</th>
+        <th style="width:16%">Локация</th>
+        <th style="width:33%">Статус / примечание</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>17</td>
+          <td>Шины Metzeler</td>
+          <td>东莞市赛万达贸易有限公司<br>Dongguan Saiwanda Trading Co., Ltd.</td>
+          <td>Дунгуань, Гуандун</td>
+          <td><span class="tag lo">официальный канал не подтверждён</span><br>Косвенное упоминание, низкая достоверность; статус подтверждается только ответом и документами.</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>Амортизаторы и вилки Öhlins</td>
+          <td>格时图赛车配件中心<br>Gusto (G-Stone) Racing Parts Center</td>
+          <td>Гуандун; сервис — Шэньчжэнь, Guangdong International Circuit</td>
+          <td><span class="tag hi">официальный канал подтверждён</span><br>Генеральный агент Öhlins в Китае; импорт, установка, гарантийный сервис.</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>Закупка через Webike China</td>
+          <td>广州威百客电子商务有限公司<br>Guangzhou Webike E-commerce Co., Ltd.</td>
+          <td>Гуанчжоу (Юэсю), Гуандун</td>
+          <td><span class="tag hi">официальный канал подтверждён</span><br>Розница/мелкий опт на внутреннем рынке Китая; возможен агентский выкуп через посредника.</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>OEM/ODM по брендам</td>
+          <td>Chongqing Moracing; Ningbo Borske; Zibo Kuoqian; NihaoMotor; Chongqing Jili Yunfeng; Zhejiang Kayo; Chongqing Bright</td>
+          <td>Чунцин, Нинбо, Цзыбо, Чжэцзян</td>
+          <td><span class="tag hi">OEM/ODM-профиль подтверждён</span><br>Voge, CFMOTO, QJMOTOR, Zontes, Kayo, Benda, Hisun, Linhai; Regulmoto/Motoland — подбор по модели/узлу.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="check">
+  <h2>Чек-лист к ответу поставщика</h2>
+  <p class="lead">Проверяйте ответ по пунктам; для вопроса 19 действует отдельный набор пунктов.</p>
+  <div class="tbl-wrap">
+    <table class="check">
+      <thead><tr>
+        <th>✓</th>
+        <th style="width:30%">Пункт</th>
+        <th style="width:70%">Что должно быть в ответе</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>Официальный статус</td><td>Дистрибьютор / агент / OEM-производитель; для Metzeler и Öhlins — подтверждение канала и документы</td></tr>
+        <tr><td>☐</td><td>Наличие / срок</td><td>Наличие на складе по каждой позиции; при отсутствии — срок поставки или производства</td></tr>
+        <tr><td>☐</td><td>MOQ</td><td>Минимальный заказ по каждой позиции; возможность смешанной партии</td></tr>
+        <tr><td>☐</td><td>Цена</td><td>Цена за единицу в CNY; отдельно с НДС и без НДС, с указанием ставки</td></tr>
+        <tr><td>☐</td><td>Аналог (摩配副厂件)</td><td>Бренд, артикул и кросс-номер; подтверждение совместимости</td></tr>
+        <tr><td>☐</td><td>Условия оплаты</td><td>Порядок оплаты, срок действия предложения</td></tr>
+        <tr><td>☐</td><td>Упаковка</td><td>Neutral packing или private label; стоимость упаковки</td></tr>
+        <tr><td>☐</td><td>Сертификаты</td><td>ISO 9001/IATF 16949; шины — DOT/ECE; подвеска — гарантийные условия</td></tr>
+        <tr><td>☐</td><td>Каталог и кросс-таблица</td><td>Прайс-лист/каталог и таблица «бренд → ваш артикул»</td></tr>
+        <tr><td>☐</td><td>Для вопроса 19</td><td>Комиссия агента (%), порядок выкупа, сроки, оплата в CNY, упаковка и консолидация, проверка при получении</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Шаблоны универсальные: перед отправкой проверьте комплектность списка позиций и при необходимости приложите ссылки/артикулы. Тексты не содержат условий доставки и расчётов за пределами внутреннего рынка Китая.
+</footer>
+
+</div>
+
+<script>
+function copyText(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var text = el.innerText;
+  var done = function () {
+    var old = btn.getAttribute('data-label') || btn.textContent;
+    btn.setAttribute('data-label', old);
+    btn.textContent = 'Скопировано ✓';
+    btn.classList.add('done');
+    setTimeout(function () {
+      btn.textContent = old;
+      btn.classList.remove('done');
+    }, 1800);
+  };
+  var fallback = function () {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.left = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    if (ok) { done(); } else { alert('Не удалось скопировать. Выделите текст вручную.'); }
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  } else {
+    fallback();
+  }
+}
+</script>
+</body>
+</html>

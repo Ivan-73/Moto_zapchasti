@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Универсальные запросы КП — Раздел 1. Тормозные колодки и диски</title>
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#fff; --ink:#1b2430; --muted:#5b6775;
+    --line:#dde3e9; --accent:#0f4c81; --accent2:#e9f1f8;
+    --ok:#1e7a46; --warn:#8a5a00;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 48px;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{background:linear-gradient(135deg,#0f4c81,#123a5c);color:#fff;padding:30px 0 24px;margin-bottom:22px}
+  header h1{margin:0 0 6px;font-size:24px;line-height:1.3}
+  header .date{opacity:.9;font-size:13.5px}
+  .req{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:16px;
+       background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+       border-radius:10px;padding:12px 16px;font-size:13px}
+  .req b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;opacity:.85}
+  section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          padding:18px 18px 22px;margin:0 0 20px}
+  h2{font-size:19px;margin:0 0 6px;color:var(--accent)}
+  h3{font-size:16px;margin:20px 0 8px}
+  .lead{color:var(--muted);font-size:14px;margin:0 0 12px}
+  .tbl-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+  th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top;text-align:left}
+  th{background:var(--accent2);color:#123a5c;font-size:12.5px;font-weight:600}
+  tr:nth-child(even) td{background:#fbfcfd}
+  a{color:#0b5fa5}
+  .copybox{border:1px solid var(--line);border-radius:10px;margin:12px 0 18px;overflow:hidden}
+  .copyhead{display:flex;align-items:center;justify-content:space-between;gap:12px;
+            background:#f2f6fa;border-bottom:1px solid var(--line);padding:10px 14px}
+  .copyhead span{font-weight:600;font-size:14px;color:#123a5c}
+  button.copy{cursor:pointer;border:1px solid #b9cfe1;background:#fff;color:#0f4c81;
+              border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+  button.copy:hover{background:var(--accent2)}
+  button.copy.done{background:#e4f5ea;border-color:#b9e3c8;color:var(--ok)}
+  .doc{white-space:pre-wrap;word-wrap:break-word;padding:16px 18px;font-size:14px;line-height:1.6}
+  .note{background:#fffaf0;border-left:4px solid #e0a800;padding:10px 14px;
+        border-radius:0 8px 8px 0;margin:12px 0;font-size:13.5px}
+  ul{margin:8px 0 0 20px;padding:0}
+  li{margin:4px 0}
+  .check td:first-child{width:34px;text-align:center;font-size:16px;color:#0f4c81}
+  .small{font-size:12.5px;color:var(--muted)}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:22px}
+  @media (max-width:760px){
+    .req{grid-template-columns:1fr}
+    header h1{font-size:20px}
+    .copyhead{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Универсальные запросы КП — Раздел 1. Тормозные колодки и диски</h1>
+    <div class="date">Дата подготовки: 25 ноября 2026 г. · шаблоны для самостоятельной рассылки поставщикам</div>
+    <div class="req">
+      <div><b>Закупщик</b>天津瑞八国际贸易有限公司<br>Tianjin Ruiba International Trade Co., Ltd.</div>
+      <div><b>Тип</b>有限责任公司（外国自然人独资）</div>
+      <div><b>Профиль</b>摩托车及零配件批发/零售；货物进出口；进出口代理；供应链管理服务；国内贸易代理；汽车零配件批发/零售</div>
+      <div><b>Роль в запросах</b>采购商 — оптовая закупка на внутреннем рынке Китая: цены, наличие, MOQ, сроки производства, аналоги (摩配副厂件)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="where">
+  <h2>Куда отправлять (справочно)</h2>
+  <p class="lead">Поставщики из Справки, Раздел 1. Ссылки ведут на профиль/сайт компании.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:4%">№</th>
+        <th style="width:30%">Название (CN / EN)</th>
+        <th style="width:16%">Локация</th>
+        <th style="width:26%">Профиль</th>
+        <th style="width:24%">Источник</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>浙江胜联汽摩配件有限公司<br>Zhejiang Shenglian Auto &amp; Motor Parts Co., Ltd.</td>
+          <td>Чжэцзян</td>
+          <td>Тормозные колодки и барабанные башмаки для мото/скутеров</td>
+          <td><a href="https://selene-autoparts.en.made-in-china.com/" target="_blank" rel="noopener">made-in-china.com</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>宁波奉东成摩擦材料有限公司<br>Ningbo Feng Dongcheng Frictional Material Co., Ltd.</td>
+          <td>Нинбо (Фэнхуа), Чжэцзян</td>
+          <td>Тормозные колодки, фильтры, свечи зажигания</td>
+          <td><a href="https://m.capafair.com/article/180" target="_blank" rel="noopener">capafair.com</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>杭州汉乐科新材料科技有限公司<br>Hangzhou Hanleke New Material Technology Co., Ltd.</td>
+          <td>Ханчжоу (Линьань), Чжэцзян</td>
+          <td>Дисковые (碟刹片) и барабанные колодки, фрикционные материалы</td>
+          <td><a href="http://www.hlkmotor.com/About.html" target="_blank" rel="noopener">hlkmotor.com</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Raxy<br>Raxy Motorrad Parts</td>
+          <td>Китай (адрес завода — по запросу)</td>
+          <td>Тормозные диски, в т.ч. плавающие; OEM/ODM</td>
+          <td><a href="https://www.raxy-motorrad.com/motorcycle-brakedisc/" target="_blank" rel="noopener">raxy-motorrad.com</a></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>宁波路耀机械制造有限公司<br>Ningbo Luyao Machinery Manufacturing Co., Ltd.</td>
+          <td>Нинбо, Чжэцзян</td>
+          <td>Тормозные диски и роторы для мото/ATV/UTV/вело</td>
+          <td><a href="https://nbluyao.en.alibaba.com/" target="_blank" rel="noopener">nbluyao.en.alibaba.com</a></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>苏州百安华轮制动系统有限公司<br>Suzhou Bai'an Hualun Brake System Co., Ltd.</td>
+          <td>Сучжоу (Сянчэн), Цзянсу</td>
+          <td>Гидравлические и механические тормозные диски для мото и вело</td>
+          <td><a href="https://qm.hc23.com/company/51281.html" target="_blank" rel="noopener">qm.hc23.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="t1">
+  <h2>Шаблон запроса №1: Тормозные колодки (передние и задние)</h2>
+  <p class="lead">Универсальный текст — подходит для любого поставщика из списка выше. Перед отправкой при необходимости приложите таблицу артикулов.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru1', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru1">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: тормозные колодки для мотоциклов — передние и задние.
+
+Перечень позиций по брендам-ориентирам:
+— Передние колодки: Brembo (07HO3005); EBC (FA085, FA124/2, FA142, FA158, FA179, FA185, FA185R, FA188, FA196HH, FA197, FA199HH, FA209/2, FA229, FA231, FA244, FA252HH, FA296HH, FA379HH, FA380HH, FA388HH, FA390HH, FA447HH); Ferodo (FDB570EF); MCP (BP679HH, BP700HH, BP717HH); Nissin (серия 2P: 2P-210NS/ST, 2P-225GS/ST, 2P-233NS, 2P-234NS, 2P-241NS, 2P-245NS/ST, 2P-248NS/RS/ST, 2P-249NS, 2P-251NS/RS, 2P-252NS/ST, 2P-256NS, 2P-257NS, 2P-260NS, 2P-265NS, 2P-289ST, 2P-300ST, 2P-311ST, 2P-318ST, 2P-321ST); SBS (631HS, 634HS, 694RSI, 700HS, 704HS, 705HS, 734HS, 809HS, 809RST, 828HS, 841HS, 894HS, 901SP); TRW (MCB582SI, MCB598SV, MCB602SV, MCB611SV, MCB622SV, MCB659SV, MCB660SV, MCB669SI/SV, MCB671SV, MCB677SV, MCB681SV, MCB682SV, MCB683SV, MCB698, MCB703, MCB703SV, MCB704SV, MCB737SV, MCB752SV, MCB755SV, MCB776SV, MCB792SV, MCB858SV, MCB888SV, MCB893SV).
+— Задние колодки: Brembo (07HO36SP); Brenta (BR4155); EBC (FA063, FA131R, FA140HH, FA152, FA174HH, FA192, FA254HH, FA266HH, FA319/2, FA319/2HH, FA346R, FA388/2HH, FA436HH, FA488HH, S626, Y515); Nissin (2P-204NS, 2P-207NS, 2P-209NS/SS, 2P-213NS, 2P-219GS, 2P-227GS, 2P-228NS, 2P-236GS/NS/ST, 2P-244NS/ST, 2P-264NS, 2P-267RS/ST, 2P-269NS, 2P-285ST, 2P-296ST, 2P-319NS, 2P-320ST); SBS (556LS, 604RSI, 657LS, 715LS, 730LS, 736LS, 790RSI, 833LS, 834HF, 834LS); TRW (MCB531, MCB531SH, MCB532, MCB575SI, MCB585, MCB585SH, MCB625SI, MCB634, MCB634SH, MCB672SH, MCB691SH, MCB705SH, MCB729SH, MCB730SI, MCB739SI, MCB783SH, MCB784SH, MCB817SH, MCB840SH, MCB841SH, MCB843SH, MCS806, MCS822).
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 500 / 1 000 / 5 000 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула аналога.
+6. Условия оплаты.
+7. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+8. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «бренд-ориентир → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn1', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn1">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车制动片（前制动片、后制动片）。
+
+参考品牌及品项：
+— 前制动片：Brembo（07HO3005）；EBC（FA085、FA124/2、FA142、FA158、FA179、FA185、FA185R、FA188、FA196HH、FA197、FA199HH、FA209/2、FA229、FA231、FA244、FA252HH、FA296HH、FA379HH、FA380HH、FA388HH、FA390HH、FA447HH）；Ferodo（FDB570EF）；MCP（BP679HH、BP700HH、BP717HH）；Nissin（2P系列：2P-210NS/ST、2P-225GS/ST、2P-233NS、2P-234NS、2P-241NS、2P-245NS/ST、2P-248NS/RS/ST、2P-249NS、2P-251NS/RS、2P-252NS/ST、2P-256NS、2P-257NS、2P-260NS、2P-265NS、2P-289ST、2P-300ST、2P-311ST、2P-318ST、2P-321ST）；SBS（631HS、634HS、694RSI、700HS、704HS、705HS、734HS、809HS、809RST、828HS、841HS、894HS、901SP）；TRW（MCB582SI、MCB598SV、MCB602SV、MCB611SV、MCB622SV、MCB659SV、MCB660SV、MCB669SI/SV、MCB671SV、MCB677SV、MCB681SV、MCB682SV、MCB683SV、MCB698、MCB703、MCB703SV、MCB704SV、MCB737SV、MCB752SV、MCB755SV、MCB776SV、MCB792SV、MCB858SV、MCB888SV、MCB893SV）。
+— 后制动片：Brembo（07HO36SP）；Brenta（BR4155）；EBC（FA063、FA131R、FA140HH、FA152、FA174HH、FA192、FA254HH、FA266HH、FA319/2、FA319/2HH、FA346R、FA388/2HH、FA436HH、FA488HH、S626、Y515）；Nissin（2P-204NS、2P-207NS、2P-209NS/SS、2P-213NS、2P-219GS、2P-227GS、2P-228NS、2P-236GS/NS/ST、2P-244NS/ST、2P-264NS、2P-267RS/ST、2P-269NS、2P-285ST、2P-296ST、2P-319NS、2P-320ST）；SBS（556LS、604RSI、657LS、715LS、730LS、736LS、790RSI、833LS、834HF、834LS）；TRW（MCB531、MCB531SH、MCB532、MCB575SI、MCB585、MCB585SH、MCB625SI、MCB634、MCB634SH、MCB672SH、MCB691SH、MCB705SH、MCB729SH、MCB730SI、MCB739SI、MCB783SH、MCB784SH、MCB817SH、MCB840SH、MCB841SH、MCB843SH、MCS806、MCS822）。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 500 / 1,000 / 5,000 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明替代品牌及料号。
+6. 付款条件。
+7. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+8. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「参考品牌 → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="t2">
+  <h2>Шаблон запроса №2: Тормозные диски</h2>
+  <p class="lead">Универсальный текст для поставщиков дисков (в т.ч. плавающих). Укажите в ответе тип диска: цельный или плавающий.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru2', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru2">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: тормозные диски для мотоциклов (передние и задние; цельные и плавающие).
+
+Перечень позиций по брендам-ориентирам:
+— Brembo: 78B40867.
+— EBC: MD1016, MD1132, MD1141X, MD1152X, MD1157X, MD1185C, MD1198X, MD1202X, MD2094XC, MD3008, MD4156XC, MD4158, MD6191D, MD6247C, MD6264C, MD6356C.
+— Ferodo: FMD0014R, FMD0140RX.
+— Tarazon: серия Z8001W … ZY-1942 (просим подтвердить применимость по каждой позиции).
+— TRW: MST201, MST240, MST245, MST277RAC, MST323, MST338, MSW220, MSW221, MSW236, MSW242, MSW243, MSW246, MSW248, MSW254, MSW283, MSW283RAC.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 50 / 100 / 500 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула аналога.
+6. Тип диска: цельный или плавающий; диаметр, толщина, материал рабочей поверхности и ступицы.
+7. Условия оплаты.
+8. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+9. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «бренд-ориентир → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn2', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn2">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车制动盘（前/后；整体式与浮动式）。
+
+参考品牌及品项：
+— Brembo：78B40867。
+— EBC：MD1016、MD1132、MD1141X、MD1152X、MD1157X、MD1185C、MD1198X、MD1202X、MD2094XC、MD3008、MD4156XC、MD4158、MD6191D、MD6247C、MD6264C、MD6356C。
+— Ferodo：FMD0014R、FMD0140RX。
+— Tarazon：Z8001W … ZY-1942 系列（请逐项确认适用车型）。
+— TRW：MST201、MST240、MST245、MST277RAC、MST323、MST338、MSW220、MSW221、MSW236、MSW242、MSW243、MSW246、MSW248、MSW254、MSW283、MSW283RAC。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 50 / 100 / 500 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明替代品牌及料号。
+6. 制动盘类型：整体式或浮动式；直径、厚度、摩擦面及盘毂材质。
+7. 付款条件。
+8. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+9. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「参考品牌 → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="ref">
+  <h2>Справочная таблица позиций</h2>
+  <p class="lead">Артикулы приведены как кросс-ориентиры. Поставщик подбирает аналог по размерам и применяемости; полный перечень можно приложить к любому шаблону.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:12%">Бренд</th>
+        <th style="width:70%">Артикул</th>
+        <th style="width:18%">Подкатегория</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Brembo</td><td>07HO3005</td><td>Колодки передние</td></tr>
+        <tr><td>EBC</td><td>FA085, FA124/2, FA142, FA158, FA179, FA185, FA185R, FA188, FA196HH, FA197, FA199HH, FA209/2, FA229, FA231, FA244, FA252HH, FA296HH, FA379HH, FA380HH, FA388HH, FA390HH, FA447HH</td><td>Колодки передние</td></tr>
+        <tr><td>Ferodo</td><td>FDB570EF</td><td>Колодки передние</td></tr>
+        <tr><td>MCP</td><td>BP679HH, BP700HH, BP717HH</td><td>Колодки передние</td></tr>
+        <tr><td>Nissin</td><td>2P-210NS/ST, 2P-225GS/ST, 2P-233NS, 2P-234NS, 2P-241NS, 2P-245NS/ST, 2P-248NS/RS/ST, 2P-249NS, 2P-251NS/RS, 2P-252NS/ST, 2P-256NS, 2P-257NS, 2P-260NS, 2P-265NS, 2P-289ST, 2P-300ST, 2P-311ST, 2P-318ST, 2P-321ST</td><td>Колодки передние</td></tr>
+        <tr><td>SBS</td><td>631HS, 634HS, 694RSI, 700HS, 704HS, 705HS, 734HS, 809HS, 809RST, 828HS, 841HS, 894HS, 901SP</td><td>Колодки передние</td></tr>
+        <tr><td>TRW</td><td>MCB582SI, MCB598SV, MCB602SV, MCB611SV, MCB622SV, MCB659SV, MCB660SV, MCB669SI/SV, MCB671SV, MCB677SV, MCB681SV, MCB682SV, MCB683SV, MCB698, MCB703, MCB703SV, MCB704SV, MCB737SV, MCB752SV, MCB755SV, MCB776SV, MCB792SV, MCB858SV, MCB888SV, MCB893SV</td><td>Колодки передние</td></tr>
+
+        <tr><td>Brembo</td><td>07HO36SP</td><td>Колодки задние</td></tr>
+        <tr><td>Brenta</td><td>BR4155</td><td>Колодки задние</td></tr>
+        <tr><td>EBC</td><td>FA063, FA131R, FA140HH, FA152, FA174HH, FA192, FA254HH, FA266HH, FA319/2, FA319/2HH, FA346R, FA388/2HH, FA436HH, FA488HH, S626, Y515</td><td>Колодки задние</td></tr>
+        <tr><td>Nissin</td><td>2P-204NS, 2P-207NS, 2P-209NS/SS, 2P-213NS, 2P-219GS, 2P-227GS, 2P-228NS, 2P-236GS/NS/ST, 2P-244NS/ST, 2P-264NS, 2P-267RS/ST, 2P-269NS, 2P-285ST, 2P-296ST, 2P-319NS, 2P-320ST</td><td>Колодки задние</td></tr>
+        <tr><td>SBS</td><td>556LS, 604RSI, 657LS, 715LS, 730LS, 736LS, 790RSI, 833LS, 834HF, 834LS</td><td>Колодки задние</td></tr>
+        <tr><td>TRW</td><td>MCB531, MCB531SH, MCB532, MCB575SI, MCB585, MCB585SH, MCB625SI, MCB634, MCB634SH, MCB672SH, MCB691SH, MCB705SH, MCB729SH, MCB730SI, MCB739SI, MCB783SH, MCB784SH, MCB817SH, MCB840SH, MCB841SH, MCB843SH, MCS806, MCS822</td><td>Колодки задние</td></tr>
+
+        <tr><td>Brembo</td><td>78B40867</td><td>Диски</td></tr>
+        <tr><td>EBC</td><td>MD1016, MD1132, MD1141X, MD1152X, MD1157X, MD1185C, MD1198X, MD1202X, MD2094XC, MD3008, MD4156XC, MD4158, MD6191D, MD6247C, MD6264C, MD6356C</td><td>Диски</td></tr>
+        <tr><td>Ferodo</td><td>FMD0014R, FMD0140RX</td><td>Диски</td></tr>
+        <tr><td>Tarazon</td><td>Z8001W … ZY-1942 (серия; конкретные позиции уточняются)</td><td>Диски</td></tr>
+        <tr><td>TRW</td><td>MST201, MST240, MST245, MST277RAC, MST323, MST338, MSW220, MSW221, MSW236, MSW242, MSW243, MSW246, MSW248, MSW254, MSW283, MSW283RAC</td><td>Диски</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">Для колодок отдельно указывайте ось (передняя/задняя) и тип состава (спечённые/органические); для дисков — диаметр, толщину и тип (цельный/плавающий). Это снимает большинство уточнений в переписке.</div>
+</section>
+
+<section id="check">
+  <h2>Чек-лист к ответу поставщика</h2>
+  <p class="lead">Проверяйте ответ по пунктам; при отсутствии любого из них запрос считается неполным.</p>
+  <div class="tbl-wrap">
+    <table class="check">
+      <thead><tr>
+        <th>✓</th>
+        <th style="width:30%">Пункт</th>
+        <th style="width:70%">Что должно быть в ответе</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>Цена</td><td>Цена за единицу в CNY, оптовая; отдельно с НДС и без НДС, с указанием ставки</td></tr>
+        <tr><td>☐</td><td>Наличие / срок</td><td>Наличие на складе по каждой позиции; при отсутствии — срок производства в рабочих днях</td></tr>
+        <tr><td>☐</td><td>MOQ</td><td>Минимальный заказ по каждой позиции; возможность смешанной партии</td></tr>
+        <tr><td>☐</td><td>Скидки за объём</td><td>Шкала скидок (для колодок — от 500/1 000/5 000 шт; для дисков — от 50/100/500 шт)</td></tr>
+        <tr><td>☐</td><td>Аналог (摩配副厂件)</td><td>Конкретный бренд и артикул аналога по каждой позиции; подтверждение применимости</td></tr>
+        <tr><td>☐</td><td>Условия оплаты</td><td>Порядок оплаты (предоплата/по факту/аккредитив), срок действия предложения</td></tr>
+        <tr><td>☐</td><td>Упаковка</td><td>Neutral packing или private label; стоимость упаковки и минимальный тираж для маркировки</td></tr>
+        <tr><td>☐</td><td>Сертификаты</td><td>ISO 9001, IATF 16949 — сканы с действующим сроком и областью действия</td></tr>
+        <tr><td>☐</td><td>Каталог и кросс-таблица</td><td>Прайс-лист/каталог и таблица «бренд-ориентир → ваш артикул»</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Шаблоны универсальные: перед отправкой проверьте комплектность артикулов и при необходимости приложите справочную таблицу. Тексты не содержат условий доставки и расчётов за пределами внутреннего рынка Китая.
+</footer>
+
+</div>
+
+<script>
+function copyText(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var text = el.innerText;
+  var done = function () {
+    var old = btn.getAttribute('data-label') || btn.textContent;
+    btn.setAttribute('data-label', old);
+    btn.textContent = 'Скопировано ✓';
+    btn.classList.add('done');
+    setTimeout(function () {
+      btn.textContent = old;
+      btn.classList.remove('done');
+    }, 1800);
+  };
+  var fallback = function () {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.left = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    if (ok) { done(); } else { alert('Не удалось скопировать. Выделите текст вручную.'); }
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  } else {
+    fallback();
+  }
+}
+</script>
+</body>
+</html>

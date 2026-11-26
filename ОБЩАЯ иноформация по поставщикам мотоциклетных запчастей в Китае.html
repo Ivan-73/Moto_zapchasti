@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Справка: поставщики мотоциклетных запчастей в Китае — верификация по 6 категориям и вопросам 17–20</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1c2430; --muted:#5b6775;
+    --line:#dfe4ea; --accent:#0f4c81; --accent2:#e8f1f8;
+    --ok:#1e7a46; --warn:#a35a00; --bad:#a32020;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 60px;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 18px}
+  header{background:linear-gradient(135deg,#0f4c81,#123a5c);color:#fff;padding:34px 0 26px;margin-bottom:26px}
+  header h1{margin:0 0 8px;font-size:26px;line-height:1.25}
+  header .sub{opacity:.9;font-size:14px}
+  .kpis{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+  .kpi{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+       border-radius:10px;padding:10px 14px;min-width:150px}
+  .kpi b{display:block;font-size:22px;line-height:1.1}
+  .kpi span{font-size:12px;opacity:.9}
+  section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          padding:20px 20px 24px;margin:0 0 22px}
+  h2{font-size:20px;margin:0 0 4px;color:var(--accent);scroll-margin-top:14px}
+  h3{font-size:16px;margin:22px 0 8px}
+  .lead{color:var(--muted);margin:0 0 14px;font-size:14px}
+  .toc{columns:2;column-gap:28px}
+  .toc a{display:block;padding:3px 0;color:var(--accent);text-decoration:none;font-size:14px}
+  .toc a:hover{text-decoration:underline}
+  table{width:100%;border-collapse:collapse;margin:10px 0 4px;font-size:13px}
+  th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top;text-align:left}
+  th{background:var(--accent2);color:#123a5c;font-weight:600;font-size:12.5px}
+  tr:nth-child(even) td{background:#fbfcfd}
+  a{color:#0b5fa5}
+  .tag{display:inline-block;border-radius:999px;padding:2px 8px;font-size:11.5px;
+       font-weight:600;white-space:nowrap}
+  .hi{background:#e4f5ea;color:var(--ok);border:1px solid #b9e3c8}
+  .mid{background:#fff3df;color:var(--warn);border:1px solid #f0d6a8}
+  .lo{background:#fde7e7;color:var(--bad);border:1px solid #f2c2c2}
+  .note{background:#fffaf0;border-left:4px solid #e0a800;padding:10px 14px;
+        border-radius:0 8px 8px 0;margin:14px 0;font-size:13.5px}
+  .warnbox{background:#fdf2f2;border-left:4px solid #c0392b;padding:10px 14px;
+           border-radius:0 8px 8px 0;margin:14px 0;font-size:13.5px}
+  .okbox{background:#f1f9f4;border-left:4px solid #2e8b57;padding:10px 14px;
+         border-radius:0 8px 8px 0;margin:14px 0;font-size:13.5px}
+  ul,ol{margin:8px 0 8px 20px;padding:0}
+  li{margin:4px 0}
+  .small{font-size:12.5px;color:var(--muted)}
+  .cn{font-weight:600}
+  code{background:#eef2f6;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:26px}
+  @media (max-width:820px){.toc{columns:1}header h1{font-size:21px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Поставщики мотоциклетных запчастей и комплектующих в Китае:<br>верификация по 6 категориям и вопросам 17–20</h1>
+    <div class="sub">Аналитическая справка по открытым источникам · дата подготовки: 25 ноября 2026 г. · запрос: 16 категорий, артикулы брендов-ориентиров, вопросы 17–20</div>
+    <div class="kpis">
+      <div class="kpi"><b>6 / 6</b><span>категорий закрыты (≥3 компании)</span></div>
+      <div class="kpi"><b>41</b><span>компания в справке</span></div>
+      <div class="kpi"><b>≈33</b><span>производителя / заводы</span></div>
+      <div class="kpi"><b>4 / 4</b><span>вопроса 17–20 разобраны</span></div>
+      <div class="kpi"><b>1</b><span>критичный пробел: Metzeler</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="summary">
+  <h2>Краткое резюме</h2>
+  <p class="lead">Цель — найти в открытых источниках Китая производителей и их экспортные подразделения, закрывающие 16 позиций询价单 (тормоза, фильтры, трансмиссия, двигатель/зажигание, подвеска, электрика), а также ответить на вопросы 17–20.</p>
+  <ul>
+    <li><b>Категории 1–6 закрыты</b>: по каждой найдено от 3 до 7 компаний с подтверждающим URL. Приоритет отдан заводам, а не трейдерам.</li>
+    <li><b>Ключевой вывод по брендам-ориентирам:</b> Brembo, EBC, Ferodo, Nissin, SBS, TRW, JT, PBR, Sunstar, Emgo, Hiflofiltro, K&N, Mahle, All Balls, BS-Battery, RK, Metzeler, Öhlins — иностранные бренды. Китайские заводы предлагают <b>функциональные аналоги (摩配副厂件)</b> под своим брендом либо OEM/ODM, но не оригинал. Подменять одно другим в контракте нельзя.</li>
+    <li><b>CHOHO подтверждён</b> как китайский производитель цепей и звёзд (Qingdao Choho Industrial, A-share 003033) — это лучший кандидат на замену JT JTF284.13 / JTR1346.44, но кросс-номер JT в открытых источниках не публикуется: требуется запрос кросс-таблицы у завода.</li>
+    <li><b>Пробел:</b> официальный импортёр Metzeler в материковом Китае документально не подтверждён (найдено только косвенное упоминание Dongguan Saiwanda Trading); официальный дистрибьютор RK Chain в материковом Китае также не подтверждён.</li>
+    <li><b>Риск:</b> запрос «дайте цену на Brembo 07HO3005» китайскому заводу юридически опасен — завод ответит аналогом, а ввоз «брендированного» аналога в РФ квалифицируется как контрафакт (ст. 1515 ГК РФ, ст. 14.10 КоАП РФ).</li>
+  </ul>
+</section>
+
+<section id="toc">
+  <h2>Оглавление</h2>
+  <div class="toc">
+    <a href="#s1">1. Тормозные колодки и диски</a>
+    <a href="#s2">2. Фильтры (масляные, воздушные)</a>
+    <a href="#s3">3. Трансмиссия: звёзды и цепи</a>
+    <a href="#choho">3.1. Отдельный блок: CHOHO и аналоги JT</a>
+    <a href="#s4">4. Двигатель, зажигание, сцепление</a>
+    <a href="#s5">5. Подвеска и рулевое (сальники, ремкомплекты)</a>
+    <a href="#s6">6. Электрика: АКБ и цепи RK</a>
+    <a href="#q17">17. Metzeler: импортёры и дистрибьюторы</a>
+    <a href="#q18">18. Öhlins: агент 格时图 (G-Stone) и сервис</a>
+    <a href="#q19">19. Webike: представительство и посредник</a>
+    <a href="#q20">20. OEM/ODM для Voge, CFMOTO, QJMOTOR, Zontes, Kayo, Regulmoto, Motoland, Benda</a>
+    <a href="#gaps">Пробелы и риски</a>
+    <a href="#method">Методика и критерии достоверности</a>
+  </div>
+</section>
+
+<section id="s1">
+  <h2>1. Тормозные колодки и диски</h2>
+  <p class="lead">Бренды-ориентиры: Brembo, EBC, Ferodo, MCP, Nissin, SBS, TRW, Brenta, Tarazon. Ключевые слова: 烧结刹车片 (спечённые колодки), 浮动式制动盘 (плавающий диск). Кластеры: Чжэцзян (Тайчжоу, Жуйань, Нинбо), Цзянсу.</p>
+  <table>
+    <thead><tr>
+      <th style="width:15%">Название (CN / EN)</th><th style="width:9%">Тип</th><th style="width:9%">Локация</th>
+      <th style="width:14%">Категории</th><th style="width:23%">Связь с брендами (цитата)</th>
+      <th style="width:12%">Экспорт / сертификаты</th><th style="width:11%">Источник</th><th style="width:7%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">浙江胜联汽摩配件有限公司</span><br>Zhejiang Shenglian Auto &amp; Motor Parts Co., Ltd.</td>
+        <td>Производитель</td><td>Чжэцзян</td>
+        <td>Тормозные колодки и барабанные башмаки для мото/скутеров; спечённые и органические составы</td>
+        <td>«Zhejiang shenglian auto&amp;motorcycle fitting Co., Ltd. is a company which producing brake pads and brake shoes. Up to date it have developed more tha…». Прямого упоминания Brembo/EBC нет — заявлен собственный каталог колодок под мототехнику.</td>
+        <td>Экспорт через Made-in-China; сертификаты на странице не раскрыты</td>
+        <td><a href="https://selene-autoparts.en.made-in-china.com/" target="_blank" rel="noopener">made-in-china.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">宁波奉东成摩擦材料有限公司</span><br>Ningbo Feng Dongcheng Frictional Material Co., Ltd.</td>
+        <td>Производитель</td><td>Нинбо (Фэнхуа), Чжэцзян</td>
+        <td>Тормозные колодки, фильтры, свечи зажигания — комплексный поставщик мото/авто</td>
+        <td>В каталоге CAPAFAIR: «宁波奉东成摩擦材料有限公司 / Ningbo Feng Dongcheng Frictional Material Co.,Ltd. — 刹车片 滤清 火花塞 / Brake Pad Filter Spark Plug».</td>
+        <td>Участник CAPAFAIR Ningbo (2022–2023); ISO/TÜV на странице не подтверждены</td>
+        <td><a href="https://m.capafair.com/article/180" target="_blank" rel="noopener">capafair.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">杭州汉乐科新材料科技有限公司</span><br>Hangzhou Hanleke New Material Technology Co., Ltd.</td>
+        <td>Производитель</td><td>Ханчжоу (Линьань), Чжэцзян</td>
+        <td>Мотоциклетные дисковые колодки (碟刹片), барабанные колодки, сцепление, фрикционные материалы</td>
+        <td>«主要产品有：摩托车、汽车离合器摩擦片及刹车片…摩托车制动蹄块及碟刹片». История с 1975 г., собственное производство фрикционных материалов.</td>
+        <td>Экспорт; сертификаты на сайте не выведены (запросить ISO 9001)</td>
+        <td><a href="http://www.hlkmotor.com/About.html" target="_blank" rel="noopener">hlkmotor.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">Raxy</span><br>Raxy Motorrad Parts</td>
+        <td>Производитель / собственный бренд</td><td>Китай (адрес завода — по запросу)</td>
+        <td>Тормозные диски (в т.ч. плавающие), рули, амортизаторы, рычаги</td>
+        <td>«Raxy is one of the most reliable motorcycle brake disc manufacturers and suppliers in China, specialized in providing high quality customized service». OEM/ODM под бренд заказчика.</td>
+        <td>Экспортный B2B-сайт, OEM/ODM; сертификаты не раскрыты</td>
+        <td><a href="https://www.raxy-motorrad.com/motorcycle-brakedisc/" target="_blank" rel="noopener">raxy-motorrad.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">宁波路耀机械制造有限公司</span><br>Ningbo Luyao Machinery Manufacturing Co., Ltd.</td>
+        <td>Производитель</td><td>Нинбо, Чжэцзян</td>
+        <td>Тормозные диски мото/ATV/UTV/вело, роторы</td>
+        <td>Профиль Alibaba: «Products: Motorcycle Brake Disc, Motorcycle Brake Rotor, ATV Brake Disc, UTV Brake Disc, Bicycle Brake Disc».</td>
+        <td>Alibaba-верифицированный поставщик; экспорт; сертификаты — по запросу</td>
+        <td><a href="https://nbluyao.en.alibaba.com/" target="_blank" rel="noopener">nbluyao.en.alibaba.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">苏州百安华轮制动系统有限公司</span><br>Suzhou Bai'an Hualun Brake System Co., Ltd.</td>
+        <td>Производитель</td><td>Сучжоу (Сянчэн), Цзянсу</td>
+        <td>Гидравлические и механические тормозные диски для мото и вело</td>
+        <td>«是各式摩托车,自行车,液压、机械式制动盘的专业生产厂家» — прямое указание на профиль плавающих/гидравлических дисков.</td>
+        <td>Локальный производитель; экспортный опыт на странице не раскрыт</td>
+        <td><a href="https://qm.hc23.com/company/51281.html" target="_blank" rel="noopener">qm.hc23.com</a></td>
+        <td><span class="tag lo">средняя/низкая</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Ограничение категории:</b> ни один китайский завод не является официальным производителем Brembo/EBC/Ferodo/Nissin/SBS/TRW. Для импорта в РФ корректная схема — заказ аналога под собственной торговой маркой (OEM/ODM) с подтверждением размеров по образцу/чертежу, а не закупка «брендированных» колодок.</div>
+</section>
+
+<section id="s2">
+  <h2>2. Фильтры (масляные, воздушные)</h2>
+  <p class="lead">Бренды-ориентиры: Emgo, Hiflofiltro, K&amp;N, Mahle, Meiwa. Ищем OEM/ODM с подтверждённым экспортом и сертификацией.</p>
+  <table>
+    <thead><tr>
+      <th style="width:15%">Название (CN / EN)</th><th style="width:9%">Тип</th><th style="width:9%">Локация</th>
+      <th style="width:14%">Категории</th><th style="width:23%">Связь с брендами (цитата)</th>
+      <th style="width:12%">Экспорт / сертификаты</th><th style="width:11%">Источник</th><th style="width:7%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">南阳佳斌实业有限公司</span><br>Nanyang Jiabin Industrial Co., Ltd.</td>
+        <td>Производитель</td><td>Наньян (Танхэ), Хэнань</td>
+        <td>Воздушные, масляные и топливные фильтры для мотоциклов; OEM/ODM</td>
+        <td>«Professional manufacturer of motorcycle air filters, oil filters, and fuel filters in China»; отдельная страница «Motorcycle Air Filter OEM &amp; ODM».</td>
+        <td>Экспорт (участие в Auto Expo India, British Dealer News); сертификация ISO — запросить актуальный сертификат</td>
+        <td><a href="https://nyjiabin.com/en" target="_blank" rel="noopener">nyjiabin.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">南京蓝天滤清器有限公司</span><br>Nanjing Blue Sky Filter Co., Ltd.</td>
+        <td>Производитель</td><td>Нанкин, Цзянсу</td>
+        <td>Мотоциклетные воздушные и масляные фильтры, фильтры для ATV/снегоходов</td>
+        <td>«Motorcycle Filters offered by China manufacturer Nanjing Blue Sky Filter Co.,Ltd.»; отдельная линейка air intake filters для мото.</td>
+        <td>Экспортный каталог; сертификаты по запросу</td>
+        <td><a href="https://www.bluesky-filter.com/Motorcycle-Filters-pl61309857.html" target="_blank" rel="noopener">bluesky-filter.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">杭州优肯贸易有限公司</span><br>Hangzhou Ucan Industry Co., Ltd.</td>
+        <td>Производитель / экспортёр</td><td>Ханчжоу, Чжэцзян</td>
+        <td>Воздушные фильтры и мотоциклетные запчасти, двигательные узлы</td>
+        <td>«We are a leading manufacturer and exporter of high-quality motorcycle spare parts» (раздел Air Filter).</td>
+        <td>Экспорт с 2009 г.; сертификаты не раскрыты</td>
+        <td><a href="https://www.ucanindustry.com/motorcycle-scooter-engine/air-filter/" target="_blank" rel="noopener">ucanindustry.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">Filtersun Filter Co., Ltd.</span><br>Filtersun</td>
+        <td>Производитель</td><td>Китай (уточнить завод)</td>
+        <td>Масляные, воздушные, топливные фильтры; OEM-поставки</td>
+        <td>«Manufacture and OEM Exported to more than 70 countries and area».</td>
+        <td>Экспорт в 70+ стран; фильтроматериалы от китайских поставщиков</td>
+        <td><a href="https://en.filtersun.cn/" target="_blank" rel="noopener">en.filtersun.cn</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">浙江环球滤清器有限公司</span><br>Zhejiang Universe Filter Co., Ltd.</td>
+        <td>Производитель</td><td>Жуйань, Чжэцзян</td>
+        <td>Масляные и топливные фильтры (преимущественно авто; мото — уточнить)</td>
+        <td>«have been specialized in Oil Filter manufacture for many years. Our main products are various kinds of Fuel Filte…».</td>
+        <td>Экспорт; профиль — автозапчасти, мото-линейку подтвердить каталогом</td>
+        <td><a href="https://www.unifil.com/" target="_blank" rel="noopener">unifil.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Важно:</b> Emgo, Hiflofiltro, K&amp;N, Mahle, Meiwa — не китайские бренды. Китайские заводы делают совместимые фильтры по кросс-номеру, но продавать их под этими брендами нельзя. Для 询价单 корректно запрашивать «compatible with HF…/KN…», а не «Hiflofiltro». По TÜV: ни один из найденных заводов не подтвердил TÜV на сайте — сертификат запрашивать отдельно.</div>
+</section>
+
+<section id="s3">
+  <h2>3. Трансмиссия: звёзды и цепи</h2>
+  <p class="lead">Бренды-ориентиры: JT, PBR, Sunstar, CHOHO. Кластер: Чунцин. Дополнительно — отдельный блок по CHOHO ниже.</p>
+  <table>
+    <thead><tr>
+      <th style="width:15%">Название (CN / EN)</th><th style="width:9%">Тип</th><th style="width:9%">Локация</th>
+      <th style="width:14%">Категории</th><th style="width:23%">Связь с брендами (цитата)</th>
+      <th style="width:12%">Экспорт / сертификаты</th><th style="width:11%">Источник</th><th style="width:7%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">青岛征和工业股份有限公司</span><br>Qingdao Choho Industrial Co., Ltd. (CHOHO)</td>
+        <td>Производитель (A-share 003033)</td><td>Циндао, Шаньдун</td>
+        <td>Мотоциклетные цепи, звёзды (передние/задние), цепи ГРМ, цепи для авто/сельхозтехники</td>
+        <td>«国内链传动行业的领军企业，链系统技术领导者，中国链传动行业首家A股上市公司»; продуктовая страница: «摩托车链条、摩托车链轮、振明链系统、链轮缓冲体».</td>
+        <td>Публичная компания, экспорт в 100+ стран, собственные заводы (в т.ч. Таиланд); ISO — запросить</td>
+        <td><a href="http://www.chohogroup.net/case/cheliangqudong.jhtml" target="_blank" rel="noopener">chohogroup.net</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">重庆万里江发链轮有限公司</span><br>Chongqing Wanlijiangfa Sprocket Co., Ltd.</td>
+        <td>Производитель</td><td>Чунцин</td>
+        <td>Мотоциклетные звёзды (передние/задние), цепные передачи, OEM</td>
+        <td>В каталоге 85-й выставки: «重庆万里江发链轮有限公司 — 摩托车链轮»; собственный сайт jfsprockets.com.</td>
+        <td>Экспорт; участник национальных мото-выставок; сертификаты по запросу</td>
+        <td><a href="https://www.jfsprockets.com/" target="_blank" rel="noopener">jfsprockets.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">重庆爵狼摩托车配件有限公司 / 重庆非比科技有限公司</span><br>Chongqing Juelang Motorcycle Parts Co., Ltd.</td>
+        <td>Производитель</td><td>Чунцин</td>
+        <td>Комплекты «цепь + звёзды», цепи, звёзды; OEM/ODM под заказчика</td>
+        <td>«重庆非比科技有限公司及旗下重庆爵狼有限公司是一家从事摩托车套链、链条、链轮的专业化生产厂家»; «承接外贸采购定单和OEM贴牌加工».</td>
+        <td>Экспортные заказы, OEM; высокотехнологичное предприятие Чунцина (2024)</td>
+        <td><a href="http://cqjuelang.moto188.com/" target="_blank" rel="noopener">cqjuelang.moto188.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">重庆赛特尔机械</span><br>Chongqing Saiteer Machinery</td>
+        <td>Производитель</td><td>Чунцин</td>
+        <td>Высокоточные комплекты «цепь + звёзды», звёзды для Haojue и др.</td>
+        <td>«Leader in high-end motorcycle chain sets… Specializing in various sprockets» (публикация в профильных группах).</td>
+        <td>Экспортная активность в соцсетях; сайт/сертификаты не подтверждены</td>
+        <td><a href="https://www.facebook.com/groups/381029686363357/posts/1396604054805910/" target="_blank" rel="noopener">facebook.com</a></td>
+        <td><span class="tag lo">низкая</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="choho">
+  <h2>3.1. Отдельный блок: CHOHO — производитель и аналоги JT JTF284.13 / JTR1346.44</h2>
+  <div class="okbox">
+    <b>Подтверждение производителя.</b> CHOHO — это <b>Qingdao Choho Industrial Co., Ltd. (青岛征和工业股份有限公司)</b>, Циндао, провинция Шаньдун. Публичная компания, единственная в отрасли цепных передач Китая с листингом на A-share (код 003033). Официальный сайт: <a href="http://www.chohogroup.net/about.jhtml" target="_blank" rel="noopener">chohogroup.net</a>. В продуктовой линейке прямо указаны «摩托车链条、摩托车链轮» — мотоциклетные цепи и звёзды (<a href="http://www.chohogroup.net/case/cheliangqudong.jhtml" target="_blank" rel="noopener">страница продукта</a>). Профильное издание Webike характеризует CHOHO как «中國鏈條大廠» с широкой линейкой «機車傳動鏈條、齒盤、正時鏈條» (<a href="https://plus.webike.tw/zh-hant/2026/04/01/honda-cb400sf-e-clutch-%E6%A6%82%E5%BF%B5%E8%BB%8A%E6%8E%A1%E7%94%A8%EF%BC%81%E4%B8%AD%E5%9C%8B%E9%8F%88%E6%A2%9D%E5%A4%A7%E5%BB%A0-choho-%E6%98%AF%E8%AA%B0%EF%BC%9F80-%E5%B8%82%E4%BD%94%E8%88%87-oem/" target="_blank" rel="noopener">webike.tw</a>).
+  </div>
+
+  <h3>Можно ли заказать аналоги JT JTF284.13 и JT JTR1346.44?</h3>
+  <ul>
+    <li><b>JTF284.13</b> — передняя звезда JT, 13 зубьев (серия JTF — front). <b>JTR1346.44</b> — задняя звезда JT, 44 зуба (серия JTR — rear). Это кросс-номера каталога JT, а не номера CHOHO.</li>
+    <li><b>Прямого кросс-номера JT → CHOHO в открытых источниках нет.</b> Ни на chohogroup.net, ни в каталогах дистрибьюторов соответствие «JTF284.13 = CHOHO …» не публикуется. Утверждать «CHOHO выпускает аналог под этим номером» без ответа завода нельзя.</li>
+    <li><b>Что реально возможно:</b> CHOHO производит звёзды по параметрам (число зубьев, шаг цепи, посадочные размеры, шлицы, материал, демпфер). Заказ оформляется как OEM/ODM под вашим брендом, а не как «JT-аналог».</li>
+    <li><b>Что запросить у CHOHO (готовый текст запроса):</b>
+      <ol>
+        <li>Кросс-таблицу «JT JTF/JTR → CHOHO» либо подтверждение, что позиции изготавливаются по чертежу.</li>
+        <li>Для JTF284.13: число зубьев 13, шаг цепи (520), диаметр вала и шлицы, толщина, материал (сталь 40Cr/45#), термообработка.</li>
+        <li>Для JTR1346.44: 44 зуба, шаг 520, PCD крепёжных отверстий, диаметр ступицы, тип (сталь/алюминий/сталь-алюминий), наличие демпфера.</li>
+        <li>MOQ, срок производства, наличие ISO 9001/IATF 16949, упаковка под private label.</li>
+      </ol>
+    </li>
+    <li><b>Вывод:</b> CHOHO — приоритетный кандидат на замену JT по трансмиссии (масштаб, публичность, экспорт), но <b>подтверждение аналога — только через кросс-запрос завода</b>. Для 询价单 в графе «摩配副厂件» корректно писать: «CHOHO, изготовление по образцу/чертежу JT JTF284.13 / JTR1346.44, подтверждение кросс-номера — запрошено».</li>
+  </ul>
+  <div class="note"><b>Альтернативы CHOHO по цепям:</b> AM Chain (岳盟, Тайвань/материковый Китай), SFR, KMC — используются как «副厂件» для RK. По звёздам в Чунцине также работают Wanlijiangfa и Juelang (см. таблицу выше).</div>
+</section>
+
+<section id="s4">
+  <h2>4. Двигатель, зажигание и сцепление</h2>
+  <p class="lead">NGK/Niterra (официальное подразделение в Китае), аналоги Torch/火炬; сцепление — EBC, TRW, Ferodo, Vesrah (离合器片). Кластеры: Чунцин, Чжэцзян (Вэньчжоу, Ханчжоу).</p>
+  <table>
+    <thead><tr>
+      <th style="width:15%">Название (CN / EN)</th><th style="width:9%">Тип</th><th style="width:9%">Локация</th>
+      <th style="width:14%">Категории</th><th style="width:23%">Связь с брендами (цитата)</th>
+      <th style="width:12%">Экспорт / сертификаты</th><th style="width:11%">Источник</th><th style="width:7%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">上海特殊陶业有限公司 (Niterra)</span><br>Niterra (NGK Spark Plug) China</td>
+        <td>Официальное производственное подразделение</td><td>Шанхай</td>
+        <td>Свечи зажигания NGK, катушки зажигания NGK, датчики NTK</td>
+        <td>«Niterra上海特殊陶业（简称）是日本特殊陶业株式会社全资在华企业，生产销售NGK火花塞、NGK点火线圈、NTK氧传感器等产品».</td>
+        <td>100% дочерняя структура японской Niterra; поставщик автозаводов; сертификаты группы</td>
+        <td><a href="https://www.niterragroup.com.cn/" target="_blank" rel="noopener">niterragroup.com.cn</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">潍柴火炬科技股份有限公司 (TORCH)</span><br>Weichai Torch Technology Co., Ltd.</td>
+        <td>Производитель</td><td>Чжучжоу, Хунань</td>
+        <td>Свечи зажигания TORCH (аналог NGK), датчики, керамика</td>
+        <td>«始于1961年…火花塞年产能达2.5亿只»; «国家制造业单项冠军企业» (2024). Прямой китайский аналог NGK для мото/авто.</td>
+        <td>Крупносерийный экспорт; входит в Weichai Holding; сертификаты группы</td>
+        <td><a href="http://www.torchsparkplug.com/" target="_blank" rel="noopener">torchsparkplug.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">重庆吉力芸峰实业集团</span><br>Chongqing Jili Yunfeng Motor Co., Ltd.</td>
+        <td>Производитель</td><td>Чунцин</td>
+        <td>Магнето, стартеры, генераторы, электрокомпоненты двигателя; поставщик мото/ATV-сборщиков</td>
+        <td>«main business is focuses on the R&amp;D and manufacturing of motors and electrical parts for more than 30years»; 1300+ сотрудников, 5 производственных площадок.</td>
+        <td>Экспорт (импортёры США/Индонезия фиксируют поставки); ISO — запросить</td>
+        <td><a href="https://en.jl-dz.com/" target="_blank" rel="noopener">en.jl-dz.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">杭州临安川伟摩擦材料有限公司 (志兵机车配件出口部)</span><br>Hangzhou Lin'an Chuanwei Friction Material Co., Ltd.</td>
+        <td>Производитель + экспортное подразделение</td><td>Ханчжоу (Линьань), Чжэцзян</td>
+        <td>Сцепление: диски сухие/мокрые, бумажные фрикционы, сцепление малой бензотехники</td>
+        <td>«一直从事生产研发国际国内各种类型的摩托车离合器、各类干式、湿式离合器摩擦片、纸基摩擦片»; отдел экспорта «志兵机车配件出口部».</td>
+        <td>Собственный экспортный отдел; сертификаты по запросу</td>
+        <td><a href="https://www.mopei8.com/coinfo/mopei/chuanwei.html" target="_blank" rel="noopener">mopei8.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">温州奋达车辆配件有限公司</span><br>Wenzhou Fenda Vehicle Parts Co., Ltd.</td>
+        <td>Производитель</td><td>Жуйань (Танся), Чжэцзян</td>
+        <td>Мотоциклетные диски сцепления (离合器片), комплекты</td>
+        <td>«瑞安专业生产摩托车离合器片的企业…产品以出口为主，兼与国内外摩托车发动机厂配套»; основана в 1992 г.</td>
+        <td>Экспортная ориентация, поставки на моторные заводы; сертификаты по запросу</td>
+        <td><a href="http://www.china-fenda.com/" target="_blank" rel="noopener">china-fenda.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">杭州长命摩擦材料有限公司</span><br>Hangzhou Changming Friction Material Co., Ltd.</td>
+        <td>Производитель</td><td>Ханчжоу, Чжэцзян</td>
+        <td>Мотоциклетные фрикционные диски, сцепление</td>
+        <td>«集科研与生产摩托车摩擦片的专业企业，是中国摩擦、耐摩、减摩材料与技术学术委员会会员单位».</td>
+        <td>Отраслевое членство; экспорт не раскрыт</td>
+        <td><a href="https://www.mopei8.com/coinfo/chuandong/chuandong-125.html" target="_blank" rel="noopener">mopei8.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">重庆博森托 / 重庆光明摩托配件有限公司</span><br>Chongqing Bright Motorparts Co., Ltd.</td>
+        <td>Производитель</td><td>Чунцин</td>
+        <td>Диски сцепления, корзины сцепления, комплекты FCC-типа для мото/скутеров/ATV</td>
+        <td>«China Motorcycle Clutch Plate manufacturer, Chongqing Bright Motorparts Co., Ltd is Motorcycle Clutch Assembly factory»; 20+ лет экспорта, 10 000+ позиций.</td>
+        <td>Экспорт 20+ лет; сертификаты по запросу</td>
+        <td><a href="https://www.bosento.com/aboutus.html" target="_blank" rel="noopener">bosento.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="s5">
+  <h2>5. Подвеска и рулевое: сальники, пыльники, втулки, подшипники, ремкомплекты</h2>
+  <p class="lead">Бренды-ориентиры: All Balls, Ariete, Athena, Tourmax. Кластеры: Хэбэй (Синтай) — «столица» РТИ и сальников, Чжэцзян.</p>
+  <table>
+    <thead><tr>
+      <th style="width:15%">Название (CN / EN)</th><th style="width:9%">Тип</th><th style="width:9%">Локация</th>
+      <th style="width:14%">Категории</th><th style="width:23%">Связь с брендами (цитата)</th>
+      <th style="width:12%">Экспорт / сертификаты</th><th style="width:11%">Источник</th><th style="width:7%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">邢台HTOB油封</span><br>Xingtai HTOB Oil Seal Co., Ltd.</td>
+        <td>Производитель</td><td>Синтай, Хэбэй</td>
+        <td>Сальники вилки, пыльники, сальники амортизаторов, ремкомплекты для aftermarket-брендов</td>
+        <td>«HTOB manufactures motorcycle fork oil seals, shock absorber seals and dust seal solutions for aftermarket distributors, repair parts brands and OEM».</td>
+        <td>OEM/aftermarket, экспорт; материалы NBR/FKM</td>
+        <td><a href="https://www.htoboilseal.com/motorcycle-oil-seals.html" target="_blank" rel="noopener">htoboilseal.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">邢台宏雷密封件制造有限公司</span><br>Xingtai Honglei Seal Manufacturing Co., Ltd. (KDIK)</td>
+        <td>Производитель</td><td>Синтай, Хэбэй</td>
+        <td>Сальники вилки (33×45×8/10.5 и др.), пыльники, сальники двигателя</td>
+        <td>«registered trademark "KDIK" is senior manufacturer for global markets. We are professional oil seals fa…».</td>
+        <td>Экспорт, собственный бренд KDIK; каталог по моделям Suzuki/Honda</td>
+        <td><a href="https://www.china-oilseals.com/product-33-45-8-10-5-br3976h-fork-seal-for-suzuki-uh125-uh200-rv125-rv200-motorcycle-front-shock-absorber-oil-seal.html" target="_blank" rel="noopener">china-oilseals.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">邢台NNK油封制造有限公司</span><br>Xingtai NNK Oil Seal Manufacturing Co., Ltd.</td>
+        <td>Производитель</td><td>Синтай, Хэбэй</td>
+        <td>Сальники вилки 25×35×9/10 и др., пыльники, ODM/OEM</td>
+        <td>«ODM&amp;OEM»; отдельная страница «NNK 25*35*9/10 Oil Seal for Motorcycle Front Fork Oil Seals».</td>
+        <td>Экспорт, ODM/OEM; аудит завода заявлен</td>
+        <td><a href="https://www.nokcn-seals.com/products/nnk-25-35-9-10-oil-seal-for-motorcycle-front-fork-oil-seals.html" target="_blank" rel="noopener">nokcn-seals.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">邢台青山密封件有限公司</span><br>Xingtai Qingshan Sealing Co., Ltd.</td>
+        <td>Производитель</td><td>Синтай, Хэбэй</td>
+        <td>Сальники TC, PU-сальники, автозапчасти</td>
+        <td>«Products: Oil Seal, Auto Parts, TC oil seals, pu oil seal».</td>
+        <td>Экспорт не раскрыт; мото-линейку подтвердить каталогом</td>
+        <td><a href="http://www.xtqsmf.cn/" target="_blank" rel="noopener">xtqsmf.cn</a></td>
+        <td><span class="tag lo">средняя/низкая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">All Balls Racing</span><br>All Balls Racing (All Balls Racing Group)</td>
+        <td>Бренд-владелец (США), контрактное производство</td><td>США; производство частично в Китае</td>
+        <td>Ремкомплекты вилки, подшипники рулевой колонки, колёсные комплекты, сальники</td>
+        <td>Официального подтверждения китайского завода нет. Профильные форумы: «the vast majority of All Balls bearings and seals are made in China»; «made in multiple countries, including China… depending on the manufacturer».</td>
+        <td>Бренд с глобальной дистрибуцией; происхождение партий — по каждой позиции отдельно</td>
+        <td><a href="https://www.allballsracing.com/" target="_blank" rel="noopener">allballsracing.com</a>; <a href="https://www.thumpertalk.com/forums/topic/826237-moose-msr-parts-unlimited-bearings-made-in-china-all-balls-racing-too/" target="_blank" rel="noopener">подтверждение (форум)</a></td>
+        <td><span class="tag lo">низкая</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Про All Balls и «Xingtai Longding»:</b> тезис промта о производстве All Balls в Китае подтверждается только косвенно (форумы, отзывы), официального завода/контрактного производителя найти не удалось. Упомянутая в промте <b>Xingtai Longding Machinery</b> по открытым источникам не верифицирована (нет сайта, нет профиля) — в справку не включена. Реально работающий кластер в Синтае — HTOB, Honglei, NNK, Qingshan (см. таблицу).</div>
+</section>
+
+<section id="s6">
+  <h2>6. Электрика и аксессуары: АКБ и цепи</h2>
+  <p class="lead">BS-Battery (SLA и LiFePO4), RK Chain (520/525/530 XRE, 120 звеньев, клёпаные, Gold/Black/Classic Steel).</p>
+  <table>
+    <thead><tr>
+      <th style="width:15%">Название (CN / EN)</th><th style="width:9%">Тип</th><th style="width:9%">Локация</th>
+      <th style="width:14%">Категории</th><th style="width:23%">Связь с брендами (цитата)</th>
+      <th style="width:12%">Экспорт / сертификаты</th><th style="width:11%">Источник</th><th style="width:7%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">BS BATTERY</span><br>BS Battery (Groupe BS)</td>
+        <td>Бренд-владелец (Франция), контрактные заводы</td><td>Франция/Тунис; представительство в Китае</td>
+        <td>АКБ SLA (свинцово-кислотные) и LiFePO4 для мото/скутеров/ATV</td>
+        <td>Каталог: «BS Battery在全球拥有6家全资子公司，2大生产基地，产品型号包含400多种». Участие в 21-й Китайской международной мото-выставке как экспонент.</td>
+        <td>6 дочерних компаний, 2 завода; прямого подтверждения завода в Китае нет</td>
+        <td><a href="https://bs-battery.com/wp-content/uploads/2022/10/2022-04_BSBattery-CATALOG-China_HD.pdf" target="_blank" rel="noopener">bs-battery.com (каталог)</a></td>
+        <td><span class="tag lo">средняя/низкая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">广州凯格电池</span><br>Kage Batteries (Guangzhou)</td>
+        <td>Производитель</td><td>Гуанчжоу, Гуандун</td>
+        <td>Литиевые (LiFePO4) мотоциклетные АКБ, OEM/ODM</td>
+        <td>«Professional Battery Manufacturer in Guangzhou, China»; профиль — powersport-батареи.</td>
+        <td>Экспорт, OEM; сертификаты UN38.3/MSDS — запросить</td>
+        <td><a href="https://www.kagebatteries.com/" target="_blank" rel="noopener">kagebatteries.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">广州市虎头实业有限公司</span><br>Guangzhou Tiger Head Industrial Co., Ltd.</td>
+        <td>Производитель</td><td>Гуанчжоу (Хайчжу), Гуандун</td>
+        <td>Свинцово-кислотные мото-АКБ (YTX/12N-серии), SMF</td>
+        <td>Каталог «MOTORCYCLE BATTERY» с адресом: «NO.132, North Gongye Road, Haizhu District»; бренд Tiger Head.</td>
+        <td>Экспорт, собственный бренд; сертификаты по запросу</td>
+        <td><a href="https://www.tigerheadbattery.com/attachment/19/source/MOTORCYCLE_BATTERY__compressed_145843.pdf" target="_blank" rel="noopener">tigerheadbattery.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">松立集团</span><br>Songli Group</td>
+        <td>Производитель</td><td>Фуцзянь</td>
+        <td>Свинцово-кислотные и MF мото-АКБ, OEM</td>
+        <td>«Business Type: Manufacturer/Factory. Main Products: Lead acid batteries, VRLA batteries, Motorcycle batteries».</td>
+        <td>OEM/ODM, экспорт; сертификаты по запросу</td>
+        <td><a href="https://www.songligroup.com/oem-manufacturer-deep-cycle-motorcycle-battery-tcs-smf-battery-12n5-bs-blue-songli.html" target="_blank" rel="noopener">songligroup.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">RK Japan (RK Takasago Chain)</span><br>RK Chain</td>
+        <td>Бренд-владелец (Япония)</td><td>Япония; дистрибуция в Азии</td>
+        <td>Цепи 520/525/530 XRE, 120L, клёпаные, Gold/Black/Classic Steel</td>
+        <td>Официальная страница дистрибьюторов: «Motorcycle Chain Distributor — Asia Pacific…»; для материкового Китая официальный дилер в списке не выделен.</td>
+        <td>Глобальная дистрибьюторская сеть; ввоз в РФ — через официальных дилеров</td>
+        <td><a href="https://global.rk-japan.co.jp/global-link/" target="_blank" rel="noopener">global.rk-japan.co.jp</a></td>
+        <td><span class="tag lo">низкая (по Китаю)</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Практический вывод:</b> BS Battery — европейский бренд, китайского завода официально не подтверждено; для SLA/LiFePO4 выгоднее китайские заводы (Kage, Tiger Head, Songli) под собственной маркой. RK Chain в материковом Китае официального дилера не имеет — в 询价单 корректно предлагать аналоги CHOHO/AM/SFR, а не «RK».</div>
+</section>
+
+<section id="q17">
+  <h2>17. Metzeler: официальные импортёры/дистрибьюторы в Китае</h2>
+  <table>
+    <thead><tr>
+      <th style="width:16%">Название (CN / EN)</th><th style="width:10%">Тип</th><th style="width:10%">Локация</th>
+      <th style="width:16%">Категории</th><th style="width:22%">Связь с брендом (цитата)</th>
+      <th style="width:13%">Экспорт / сертификаты</th><th style="width:9%">Источник</th><th style="width:6%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">东莞市赛万达贸易有限公司</span><br>SAIWANDA TRADING CO., LTD.</td>
+        <td>Трейдер / импортёр</td><td>Дунгуань, Гуандун</td>
+        <td>Мотошины крупнокубатурных мотоциклов, масла, экипировка</td>
+        <td>«SAIWANDA TRADING CO., LTD. established in 2006. The company's products include: two wheels of large engine tires, oil, knight accessories» — профиль соответствует импортёру Metzeler, но прямая привязка к бренду в источнике не указана.</td>
+        <td>Импорт/дистрибуция с 2006 г.; официальный статус не подтверждён</td>
+        <td><a href="https://www.zhipin.com/gongsi/ae6fe1897314222f0HR-3t-1EA~~.html" target="_blank" rel="noopener">zhipin.com</a></td>
+        <td><span class="tag lo">низкая</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="warnbox">
+    <b>Пробел:</b> официальный импортёр Metzeler в материковом Китае по открытым источникам <b>не подтверждён</b>. Metzeler принадлежит Pirelli; в Китае бренд продвигается через структуры Pirelli China, но публичного списка авторизованных мото-дилеров Metzeler для материкового Китая найти не удалось (официальный локатор дилеров — <a href="https://www.metzeler.com/zh-tw/find-your-dealer" target="_blank" rel="noopener">metzeler.com/zh-tw/find-your-dealer</a>, преимущественно Тайвань/Гонконг).
+    <br><b>Рекомендация:</b> запрашивать у поставщика не «Metzeler», а конкретную модель/размер; при необходимости официальной поставки — идти через Pirelli China или авторизованного дилера в Гонконге/Тайване. Для 询价单 ответ: «Metzeler официально не поставляем; можем предложить CST/Timsun/Kenda в аналогичных размерах».
+  </div>
+</section>
+
+<section id="q18">
+  <h2>18. Öhlins: официальный агент 格时图 (G-Stone), дилерская сеть и сервис</h2>
+  <table>
+    <thead><tr>
+      <th style="width:16%">Название (CN / EN)</th><th style="width:10%">Тип</th><th style="width:10%">Локация</th>
+      <th style="width:16%">Категории</th><th style="width:22%">Связь с брендом (цитата)</th>
+      <th style="width:13%">Экспорт / сертификаты</th><th style="width:9%">Источник</th><th style="width:6%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">格时图赛车配件中心</span><br>Gusto (G-Stone) Racing Parts Center</td>
+        <td>Официальный генеральный агент</td><td>Гуандун (офис/сервис — Шэньчжэнь, трасса Guangdong International Circuit)</td>
+        <td>Амортизаторы и вилки Öhlins для мото и авто, гоночные компоненты, сервис и обслуживание</td>
+        <td>«OHLINS中国总代理格时图»; «格时图赛车配件中心作为Öhlins中国总代理在深圳和广东国际赛车场均设有售后服务».</td>
+        <td>Импорт, установка, гарантийный и постгарантийный сервис; дилерская сеть «全国经销商»</td>
+        <td><a href="http://www.gusto.com.cn/brand?classid=3&amp;id=48" target="_blank" rel="noopener">gusto.com.cn</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <ul>
+    <li><b>Статус:</b> 格时图 (Gusto) официально позиционируется как генеральный агент Öhlins в Китае; на сайте есть разделы «全国经销商», «街车产品», «维护与保养», «赛车研发».</li>
+    <li><b>Сервис:</b> сервисные центры в Шэньчжэне и на трассе Guangdong International Circuit; официальная публикация предупреждает о «серых» и поддельных амортизаторах без гарантии (<a href="https://www.163.com/dy/article/K6PK0I4T0527C75F.html" target="_blank" rel="noopener">163.com</a>).</li>
+    <li><b>Для закупки в РФ:</b> прямых поставок «с завода» нет — только через Gusto/его дилеров. Запрашивать коммерческое предложение с указанием модели, длины, пружины и типа крепления; уточнять возможность экспорта в РФ (санкционные ограничения на некоторые позиции).</li>
+  </ul>
+</section>
+
+<section id="q19">
+  <h2>19. Webike: официальное представительство в Китае и роль посредника</h2>
+  <table>
+    <thead><tr>
+      <th style="width:16%">Название (CN / EN)</th><th style="width:10%">Тип</th><th style="width:10%">Локация</th>
+      <th style="width:16%">Категории</th><th style="width:22%">Связь с брендом (цитата)</th>
+      <th style="width:13%">Экспорт / сертификаты</th><th style="width:9%">Источник</th><th style="width:6%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">广州威百客电子商务有限公司</span><br>Guangzhou Webike E-commerce Co., Ltd.</td>
+        <td>Официальное представительство (e-commerce)</td><td>Гуанчжоу (Юэсю), Гуандун</td>
+        <td>Мотозапчасти, экипировка, тюнинг, OEM-детали; онлайн + офлайн-магазин</td>
+        <td>«2017年Webike来到中国» (генеральный директор 彭昱明); сайт: «© 2026 广州威百客电子商务有限公司… 粤ICP备17119815号»; в 2023 г. открыт первый физический магазин в Гуанчжоу (Fuxing Motorcycle Parts City).</td>
+        <td>Японская e-commerce группа Webike; прямые поставки из Японии, склад в Китае</td>
+        <td><a href="https://shop.webike-china.cn/" target="_blank" rel="noopener">shop.webike-china.cn</a>; <a href="https://plus.webike.hk/zh-hant/?p=7639%2F&amp;variant=zh-cn" target="_blank" rel="noopener">webike.hk (2017/2023)</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Нужен ли посредник и может ли китайский экспортёр быть агентом по закупкам в Webike?</h3>
+  <ul>
+    <li><b>Webike China — это розничный/мелкооптовый канал</b>, а не экспортёр. Он продаёт на внутренний рынок Китая, чеки в юанях, доставка по КНР. Прямой экспорт в РФ через него не оформляется.</li>
+    <li><b>Посредник нужен</b>, если требуется: выкуп позиций, которых нет у китайских заводов (оригинальные японские детали, редкие бренды), консолидация сборного груза, проверка подлинности.</li>
+    <li><b>Китайский экспортёр может выступать агентом по закупкам</b> (采购代理), но это отдельная услуга: договор агентства/комиссии, выкуп на складе Webike China, переупаковка, экспортная декларация. Юридически это не «поставка от Webike», а «покупка через агента» — ответственность за качество и легальность несёт агент.</li>
+    <li><b>Рекомендация для ответа на вопрос 19:</b> «Да, при отсутствии других каналов можем выступить агентом по закупке в Webike China с комиссией X%; срок +5–7 дней к стандартному; гарантия Webike на территорию РФ не распространяется».</li>
+  </ul>
+</section>
+
+<section id="q20">
+  <h2>20. OEM/ODM и экспортёры запчастей для Voge, CFMOTO, QJMOTOR, Zontes, Kayo, Regulmoto, Motoland, Benda</h2>
+  <p class="lead">Ключевые слова: «[Brand] 配件 供应商», «[Brand] spare parts China supplier». Ниже — компании с подтверждёнными профилями по этим брендам.</p>
+  <table>
+    <thead><tr>
+      <th style="width:15%">Название (CN / EN)</th><th style="width:9%">Тип</th><th style="width:9%">Локация</th>
+      <th style="width:15%">Бренды / категории</th><th style="width:23%">Связь с брендами (цитата)</th>
+      <th style="width:12%">Экспорт / сертификаты</th><th style="width:10%">Источник</th><th style="width:7%">Достоверность</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="cn">重庆摩瑞斯摩托车配件有限公司</span><br>Chongqing Moracing Motorcycle Parts Co., Ltd.</td>
+        <td>Производитель / трейдер</td><td>Чунцин</td>
+        <td>Voge, Loncin, Kayo, Bashan; двигатели, цилиндры, электрика, пластик</td>
+        <td>Карточки товаров: «Moracing Motorcycle Parts Accessories Loncin Voge Yf300 300cc…», «Moracing Loncin Lx200-M Kayo Au200…»; основана 28.09.2022.</td>
+        <td>Экспорт через Made-in-China; сертификаты не раскрыты</td>
+        <td><a href="https://cqmoracing.en.made-in-china.com/" target="_blank" rel="noopener">made-in-china.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">宁波博斯克车辆配件有限公司</span><br>Ningbo Borske Vehicle Parts Co., Ltd.</td>
+        <td>Производитель</td><td>Нинбо, Чжэцзян</td>
+        <td>Benda (Chinchilla, Darkflag, Rock), Harley, Vespa; дуги, багажники, аксессуары</td>
+        <td>Отдельная страница «For BENDA»; «provides bulk B2B supply of heavy-duty Motorcycle Crash Bars &amp; Engine Guards…».</td>
+        <td>B2B-экспорт, собственное производство; сертификаты по запросу</td>
+        <td><a href="https://www.borske.com/portfolio_category/products/brand-motorcycle-parts/for-benda" target="_blank" rel="noopener">borske.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">淄博阔乾机械有限公司</span><br>Zibo Kuoqian Machinery Co., Ltd.</td>
+        <td>Производитель / экспортёр</td><td>Цзыбо, Шаньдун</td>
+        <td>ATV/UTV: Hisun, CFMOTO, Linhai; запчасти двигателя, подвески, кузова</td>
+        <td>«built in 2005, is a professional manufacturer and exporter of ATV, UTV, Go-Kart, motorcycle, dune buggy parts»; карточка «CF Front Differential Reducer Gearbox for ATV UTV».</td>
+        <td>Alibaba-верифицирован, 10+ лет экспорта; сертификаты по запросу</td>
+        <td><a href="https://www.kuoqianparts.com/" target="_blank" rel="noopener">kuoqianparts.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">NihaoMotor</span><br>Nihao Motor Parts</td>
+        <td>Производитель / экспортёр</td><td>Китай (уточнить завод)</td>
+        <td>Voge, CFMOTO, KOVE, QJMOTOR, Zontes; запчасти и аксессуары</td>
+        <td>«The best Chinese motorcycle parts factory NihaoMotor has parts for Chinese manufacturer VOGE, CF MOTO, KOVE, QJ MOTO, ZONTES».</td>
+        <td>Экспортный B2B; сертификаты не раскрыты</td>
+        <td><a href="https://nihaomotor.com/" target="_blank" rel="noopener">nihaomotor.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">重庆吉力芸峰实业集团</span><br>Chongqing Jili Yunfeng Motor Co., Ltd.</td>
+        <td>Производитель (OEM-поставщик)</td><td>Чунцин</td>
+        <td>Магнето, стартеры, генераторы для мото/ATV-сборщиков (Voge, Zongshen и др.)</td>
+        <td>«R&amp;D and manufacturing of motors and electrical parts for more than 30years»; 5 производственных площадок, 1300+ сотрудников; в импортных данных фигурирует как поставщик мотозаводов.</td>
+        <td>OEM-поставки, экспорт; ISO — запросить</td>
+        <td><a href="https://en.jl-dz.com/" target="_blank" rel="noopener">en.jl-dz.com</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">浙江卡友摩托有限公司</span><br>Zhejiang Kayo Motor Co., Ltd.</td>
+        <td>Производитель (бренд Kayo)</td><td>Чжэцзян</td>
+        <td>Kayo: питбайки, эндуро, ATV/UTV, запчасти</td>
+        <td>«As the first Chinese company which designs and creates the off-road motorcycles, KAYO began to manufacture pit bikes and exported them…».</td>
+        <td>Собственный бренд, глобальный экспорт; сертификаты по запросу</td>
+        <td><a href="https://www.cccme.cn/shop/cccme9044/product.aspx" target="_blank" rel="noopener">cccme.cn</a></td>
+        <td><span class="tag hi">высокая</span></td>
+      </tr>
+      <tr>
+        <td><span class="cn">重庆光明摩托配件有限公司</span><br>Chongqing Bright Motorparts Co., Ltd.</td>
+        <td>Производитель</td><td>Чунцин</td>
+        <td>Сцепление и расходники для мото/ATV; работает с китайскими сборщиками</td>
+        <td>«With over 20 years in export motorcycle parts business, we've been owning more than 100 categories and 10,000 items».</td>
+        <td>Экспорт 20+ лет; сертификаты по запросу</td>
+        <td><a href="https://www.bosento.com/aboutus.html" target="_blank" rel="noopener">bosento.com</a></td>
+        <td><span class="tag mid">средняя</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Regulmoto и Motoland:</b> это российские торговые марки, а не китайские бренды-производители. Отдельных «заводов Regulmoto/Motoland» в Китае нет — запчасти производятся на контрактных заводах (в т.ч. в Чунцине и Чжэцзяне) под маркой заказчика. Для поиска поставщика корректно запрашивать не «Regulmoto 配件», а модель/узел (например, «Regulmoto Sport 003 пластик», «Motoland XR 250 двигатель») и подбирать завод по кросс-каталогу. <b>Zontes</b> — бренд Guangdong Daye Motorcycle (zontes.com), запчасти идут через официальную дилерскую сеть; OEM-поставщики — в Гуандуне и Чунцине.</div>
+</section>
+
+<section id="gaps">
+  <h2>Пробелы и риски</h2>
+
+  <h3>1. Категории с недостаточным покрытием</h3>
+  <ul>
+    <li><b>Metzeler (вопрос 17):</b> найдена 1 компания с низкой достоверностью. Официальный импортёр в материковом Китае не подтверждён. Причина: бренд продвигается через Pirelli, публичных списков мото-дилеров для КНР нет; основная дистрибуция — Тайвань/Гонконг.</li>
+    <li><b>RK Chain (категория 6):</b> официальный дилер в материковом Китае не подтверждён. Причина: RK работает через региональных дистрибьюторов, китайский рынок обслуживается из Гонконга/Японии.</li>
+    <li><b>Тормозные колодки:</b> ровно 3 подтверждённых производителя (минимум закрыт), но ни один не публикует сертификаты ISO/TÜV на сайте — требуется аудит.</li>
+    <li><b>All Balls / Xingtai Longding:</b> производство All Balls в Китае подтверждается только косвенно; Xingtai Longding не верифицирован и исключён.</li>
+  </ul>
+
+  <h3>2. Компании с низкой достоверностью (требуют проверки перед контрактом)</h3>
+  <ul>
+    <li><b>Chongqing Saiteer Machinery</b> — только соцсети, нет сайта и сертификатов.</li>
+    <li><b>Dongguan Saiwanda Trading</b> — только профиль на рекрутинговом портале, бренд Metzeler прямо не указан.</li>
+    <li><b>All Balls Racing</b> — статус «производитель в Китае» не подтверждён официально.</li>
+    <li><b>Suzhou Bai'an Hualun</b> — нет собственного сайта, только отраслевой каталог.</li>
+    <li><b>Xingtai Qingshan</b> — мото-линейка не подтверждена каталогом.</li>
+  </ul>
+
+  <h3>3. Юридические и коммерческие риски</h3>
+  <div class="warnbox">
+    <ul>
+      <li><b>Контрафакт.</b> Закупка «Brembo/EBC/Ferodo/JT/K&amp;N/All Balls» у китайского завода без авторизации — риск ввоза контрафакта. Ответственность: ст. 1515 ГК РФ (компенсация правообладателю), ст. 14.10 КоАП РФ (административная), ст. 180 УК РФ (при повторности/крупном размере). Таможня ЕАЭС приостанавливает выпуск по ТРОИС.</li>
+      <li><b>Подмена понятий в 询价单.</b> Заводы охотно пишут «Brembo-compatible», но в инвойсе это должно быть <b>своё</b> наименование и бренд. Иначе — недостоверное декларирование (ст. 16.2 КоАП РФ).</li>
+      <li><b>Кросс-номера JT → CHOHO.</b> Без письменного подтверждения завода нельзя указывать в контракте «аналог JT JTF284.13» — только «изготовлено по образцу, размеры согласно приложению».</li>
+      <li><b>Сертификация в РФ.</b> Для мото-запчастей: декларация/сертификат ТР ТС 018/2011 (колёсные ТС и компоненты), для АКБ — ТР ТС 004/2011, 020/2011; для тормозных колодок — требования по безопасности компонентов. У китайских заводов чаще есть ISO 9001, но не ТР ТС — сертификацию оформляет импортёр.</li>
+      <li><b>Предоплата и качество.</b> Для новых заводов — только аккредитив или Escrow/Alibaba Trade Assurance; предоплата 30% допустима после аудита и образцов.</li>
+    </ul>
+  </div>
+
+  <h3>4. Что уточнить у поставщиков до ответа на 询价单</h3>
+  <ol>
+    <li>Актуальные сертификаты ISO 9001 / IATF 16949 / TÜV (скан, срок действия, область).</li>
+    <li>Кросс-таблицу «бренд-ориентир → собственный артикул» по каждой позиции (особенно JT, EBC, All Balls, RK).</li>
+    <li>Наличие демпфера и материал звёзд (сталь/алюминий/сталь-алюминий), тип колодок (спечённые/органические).</li>
+    <li>MOQ, срок производства, условия упаковки под private label, возможность中性 упаковки (neutral packing) без брендов.</li>
+    <li>Экспортный опыт в РФ/ЕАЭС и готовность работать по Инкотермс 2020 (FOB/CFR/CIP).</li>
+  </ol>
+</section>
+
+<section id="method">
+  <h2>Методика и критерии достоверности</h2>
+  <ul>
+    <li><b>Источники:</b> официальные сайты компаний, B2B-платформы (Made-in-China, Alibaba), отраслевые каталоги выставок (CAPAFAIR, EICMA, MotoChina), профильные СМИ и каталоги (Webike, mopei8, hc23), данные публичных компаний (Sina Finance, 巨潮), официальные страницы брендов.</li>
+    <li><b>Языки запросов:</b> китайский (производственные кластеры, 厂家, 供应商, 出口), английский (B2B-профили), русский (проверка соответствия терминов).</li>
+    <li><b>Критерии включения:</b> наличие подтверждающего URL; указание типа (производитель/трейдер/дистрибьютор); локация; профиль продукции. Компании без URL и без подтверждения профиля в справку не включались (например, Xingtai Longding).</li>
+    <li><b>Шкала достоверности:</b>
+      <ul>
+        <li><span class="tag hi">высокая</span> — собственный сайт/официальная страница + подтверждение профиля и локации, желательно независимый источник.</li>
+        <li><span class="tag mid">средняя</span> — B2B-профиль/каталог выставки + описание продукции, но без собственного сайта или сертификатов.</li>
+        <li><span class="tag lo">низкая</span> — только соцсети/рекрутинговый профиль/форум, нет прямого подтверждения бренда или статуса.</li>
+      </ul>
+    </li>
+    <li><b>Ограничение:</b> справка не заменяет аудит завода и проверку контрагента (выписка из бизнес-реестра, tax status, судебные дела). Перед контрактом рекомендуется запросить бизнес-лицензию, сертификаты и провести видеоаудит производства.</li>
+  </ul>
+</section>
+
+<footer>
+  Справка подготовлена по открытым источникам на 25.11.2026. Ссылки ведут на страницы компаний и каталогов; актуальность цен, наличия и сертификатов подтверждается только прямым запросом поставщику.
+</footer>
+
+</div>
+</body>
+</html>

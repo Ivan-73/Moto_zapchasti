@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Универсальные запросы КП — Раздел 2. Фильтры (масляные и воздушные)</title>
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#fff; --ink:#1b2430; --muted:#5b6775;
+    --line:#dde3e9; --accent:#0f4c81; --accent2:#e9f1f8;
+    --ok:#1e7a46; --warn:#8a5a00;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 48px;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{background:linear-gradient(135deg,#0f4c81,#123a5c);color:#fff;padding:30px 0 24px;margin-bottom:22px}
+  header h1{margin:0 0 6px;font-size:24px;line-height:1.3}
+  header .date{opacity:.9;font-size:13.5px}
+  .req{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:16px;
+       background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+       border-radius:10px;padding:12px 16px;font-size:13px}
+  .req b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;opacity:.85}
+  section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          padding:18px 18px 22px;margin:0 0 20px}
+  h2{font-size:19px;margin:0 0 6px;color:var(--accent)}
+  h3{font-size:16px;margin:20px 0 8px}
+  .lead{color:var(--muted);font-size:14px;margin:0 0 12px}
+  .tbl-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+  th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top;text-align:left}
+  th{background:var(--accent2);color:#123a5c;font-size:12.5px;font-weight:600}
+  tr:nth-child(even) td{background:#fbfcfd}
+  a{color:#0b5fa5}
+  .copybox{border:1px solid var(--line);border-radius:10px;margin:12px 0 18px;overflow:hidden}
+  .copyhead{display:flex;align-items:center;justify-content:space-between;gap:12px;
+            background:#f2f6fa;border-bottom:1px solid var(--line);padding:10px 14px}
+  .copyhead span{font-weight:600;font-size:14px;color:#123a5c}
+  button.copy{cursor:pointer;border:1px solid #b9cfe1;background:#fff;color:#0f4c81;
+              border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+  button.copy:hover{background:var(--accent2)}
+  button.copy.done{background:#e4f5ea;border-color:#b9e3c8;color:var(--ok)}
+  .doc{white-space:pre-wrap;word-wrap:break-word;padding:16px 18px;font-size:14px;line-height:1.6}
+  .note{background:#fffaf0;border-left:4px solid #e0a800;padding:10px 14px;
+        border-radius:0 8px 8px 0;margin:12px 0;font-size:13.5px}
+  ul{margin:8px 0 0 20px;padding:0}
+  li{margin:4px 0}
+  .check td:first-child{width:34px;text-align:center;font-size:16px;color:#0f4c81}
+  .small{font-size:12.5px;color:var(--muted)}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:22px}
+  @media (max-width:760px){
+    .req{grid-template-columns:1fr}
+    header h1{font-size:20px}
+    .copyhead{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Универсальные запросы КП — Раздел 2. Фильтры (масляные и воздушные)</h1>
+    <div class="date">Дата подготовки: 25 ноября 2026 г. · шаблоны для самостоятельной рассылки поставщикам</div>
+    <div class="req">
+      <div><b>Закупщик</b>天津瑞八国际贸易有限公司<br>Tianjin Ruiba International Trade Co., Ltd.</div>
+      <div><b>Тип</b>有限责任公司（外国自然人独资）</div>
+      <div><b>Профиль</b>摩托车及零配件批发/零售；货物进出口；进出口代理；供应链管理服务；国内贸易代理；汽车零配件批发/零售</div>
+      <div><b>Роль в запросах</b>采购商 — оптовая закупка на внутреннем рынке Китая: цены, наличие, MOQ, сроки производства, аналоги (摩配副厂件)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="where">
+  <h2>Куда отправлять (справочно)</h2>
+  <p class="lead">Поставщики из Справки, Раздел 2. Ссылки ведут на профиль/сайт компании.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:4%">№</th>
+        <th style="width:30%">Название (CN / EN)</th>
+        <th style="width:16%">Локация</th>
+        <th style="width:26%">Профиль</th>
+        <th style="width:24%">Источник</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>南阳佳斌实业有限公司<br>Nanyang Jiabin Industrial Co., Ltd.</td>
+          <td>Наньян (Танхэ), Хэнань</td>
+          <td>Воздушные, масляные и топливные фильтры для мотоциклов; OEM/ODM</td>
+          <td><a href="https://nyjiabin.com/en" target="_blank" rel="noopener">nyjiabin.com</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>南京蓝天滤清器有限公司<br>Nanjing Blue Sky Filter Co., Ltd.</td>
+          <td>Нанкин, Цзянсу</td>
+          <td>Мото-фильтры, воздушные и масляные; ATV/снегоходы</td>
+          <td><a href="https://www.bluesky-filter.com/Motorcycle-Filters-pl61309857.html" target="_blank" rel="noopener">bluesky-filter.com</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>杭州优肯贸易有限公司<br>Hangzhou Ucan Industry Co., Ltd.</td>
+          <td>Ханчжоу, Чжэцзян</td>
+          <td>Воздушные фильтры и мотоциклетные запчасти, двигательные узлы</td>
+          <td><a href="https://www.ucanindustry.com/motorcycle-scooter-engine/air-filter/" target="_blank" rel="noopener">ucanindustry.com</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Filtersun Filter Co., Ltd.<br>Filtersun</td>
+          <td>Китай (завод — по запросу)</td>
+          <td>Масляные, воздушные, топливные фильтры; OEM-поставки</td>
+          <td><a href="https://en.filtersun.cn/" target="_blank" rel="noopener">en.filtersun.cn</a></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>浙江环球滤清器有限公司<br>Zhejiang Universe Filter Co., Ltd.</td>
+          <td>Жуйань, Чжэцзян</td>
+          <td>Масляные и топливные фильтры (преимущественно авто; мото — уточнить)</td>
+          <td><a href="https://www.unifil.com/" target="_blank" rel="noopener">unifil.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="t1">
+  <h2>Шаблон запроса №1: Масляные фильтры</h2>
+  <p class="lead">Универсальный текст — подходит для любого поставщика из списка. Перечень артикулов включён в письмо.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru1', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru1">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: масляные фильтры для мотоциклов.
+
+Перечень позиций по брендам-ориентирам:
+— Emgo: 10-28410, 10-30010, 10-37500, 10-55510, 10-55660, 10-55674, 10-79100, 10-79130, 10-82220, 10-82224, 10-82230, 10-82240, 10-82250, 10-99200, 10-791200.
+— Hiflofiltro: HF112, HF116, HF117, HF133, HF136, HF138, HF138RC, HF139, HF140, HF141, HF142, HF145, HF147, HF148, HF204, HF204RC, HF205, HF207, HF303, HF303C, HF303RC, HF401.
+— K&N: KN-303.
+— Mahle: OC 574, OC 575.
+— Meiwa: H1013, H1015, S3001, S3012.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 50 / 100 / 500 / 1 000 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула аналога.
+6. Условия оплаты.
+7. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+8. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+9. Тип фильтра: сменный картридж или навинчиваемый; резьба и размеры.
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «бренд-ориентир → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn1', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn1">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车机油滤清器。
+
+参考品牌及品项：
+— Emgo：10-28410、10-30010、10-37500、10-55510、10-55660、10-55674、10-79100、10-79130、10-82220、10-82224、10-82230、10-82240、10-82250、10-99200、10-791200。
+— Hiflofiltro：HF112、HF116、HF117、HF133、HF136、HF138、HF138RC、HF139、HF140、HF141、HF142、HF145、HF147、HF148、HF204、HF204RC、HF205、HF207、HF303、HF303C、HF303RC、HF401。
+— K&N：KN-303。
+— Mahle：OC 574、OC 575。
+— Meiwa：H1013、H1015、S3001、S3012。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 50 / 100 / 500 / 1,000 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明替代品牌及料号。
+6. 付款条件。
+7. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+8. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+9. 滤清器类型：滤芯式或旋装式；螺纹及尺寸规格。
+
+另请提供产品目录/价格表，以及「参考品牌 → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="t2">
+  <h2>Шаблон запроса №2: Воздушные фильтры</h2>
+  <p class="lead">Универсальный текст для поставщиков воздушных фильтров. Полный перечень артикулов — в справочной таблице ниже (Приложение 1).</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru2', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru2">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: воздушные фильтры для мотоциклов.
+
+Перечень позиций по брендам-ориентирам:
+— Emgo: 12-90050, 12-90060, 12-90322, 12-90342, 12-90346, 12-90347, 12-90348, 12-90349, 12-90460, 12-90468, 12-90550, 12-90582, 12-90592, 12-90734, 12-91140, 12-91142, 12-91160, 12-91170, 12-91470, 12-91480, 12-91484, 12-92448, 12-92512, 12-92514, 12-92516, 12-92545, 12-92570, 12-92584, 12-92682, 12-92918, 12-92942, 12-92948, 12-93016, 12-93026, 12-93714, 12-93742, 12-93831, 12-93834, 12-93836, 12-93860, 12-94036, 12-94073, 12-94078, 12-94082, 12-94084, 12-94092, 12-94094, 12-94386, 12-94388, 12-94392, 12-94462, 12-94464, 12-94480, 12-95500, 12-95520, 12-95526, 12-95570, 12-95580, 12-95866, 12-95882.
+— Hiflofiltro: серия HFA — HFA1501, HFA1602, HFA1603, HFA1606, HFA1607, HFA1615, HFA1616, HFA1618, HFA1619, HFA1620, HFA1710, HFA1712, HFA1715, HFA1801, HFA1909, HFA1910, HFA1915, HFA1917, HFA1919, HFA1921, HFA1922, HFA1926, HFA1929, HFA1931, HFA1933, HFA1934, HFA1936, HFA1937, HFA2406, HFA2505, HFA2602–HFA2610, HFA2703, HFA2801, HFA2802, HFA2909, HFA2910, HFA2914–HFA2925, HFA3501, HFA3602–HFA3621, HFA3705, HFA3803, HFA3804, HFA3807, HFA3808, HFA3907–HFA3914, HFA4603–HFA4615, HFA4707, HFA4906, HFA4910–HFA4924; серия HFF — HFF1015, HFF1016, HFF1018, HFF1022, HFF1025, HFF1026, HFF1030, HFF2015, HFF2017, HFF2019, HFF2027, HFF2030, HFF3014, HFF3015, HFF3017, HFF3026, HFF4012, HFF4014, HFF4018, HFF4020, HFF4023, HFF4030.
+
+Полный перечень артикулов по каждой позиции приведён в Приложении 1 (справочная таблица); при необходимости направляем его отдельным файлом.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 50 / 100 / 500 / 1 000 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула аналога.
+6. Условия оплаты.
+7. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+8. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+9. Тип фильтра: сухой/масляный, поролоновый/бумажный; размеры и применимость.
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «бренд-ориентир → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn2', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn2">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车空气滤清器。
+
+参考品牌及品项：
+— Emgo：12-90050、12-90060、12-90322、12-90342、12-90346、12-90347、12-90348、12-90349、12-90460、12-90468、12-90550、12-90582、12-90592、12-90734、12-91140、12-91142、12-91160、12-91170、12-91470、12-91480、12-91484、12-92448、12-92512、12-92514、12-92516、12-92545、12-92570、12-92584、12-92682、12-92918、12-92942、12-92948、12-93016、12-93026、12-93714、12-93742、12-93831、12-93834、12-93836、12-93860、12-94036、12-94073、12-94078、12-94082、12-94084、12-94092、12-94094、12-94386、12-94388、12-94392、12-94462、12-94464、12-94480、12-95500、12-95520、12-95526、12-95570、12-95580、12-95866、12-95882。
+— Hiflofiltro：HFA 系列 — HFA1501、HFA1602、HFA1603、HFA1606、HFA1607、HFA1615、HFA1616、HFA1618、HFA1619、HFA1620、HFA1710、HFA1712、HFA1715、HFA1801、HFA1909、HFA1910、HFA1915、HFA1917、HFA1919、HFA1921、HFA1922、HFA1926、HFA1929、HFA1931、HFA1933、HFA1934、HFA1936、HFA1937、HFA2406、HFA2505、HFA2602–HFA2610、HFA2703、HFA2801、HFA2802、HFA2909、HFA2910、HFA2914–HFA2925、HFA3501、HFA3602–HFA3621、HFA3705、HFA3803、HFA3804、HFA3807、HFA3808、HFA3907–HFA3914、HFA4603–HFA4615、HFA4707、HFA4906、HFA4910–HFA4924；HFF 系列 — HFF1015、HFF1016、HFF1018、HFF1022、HFF1025、HFF1026、HFF1030、HFF2015、HFF2017、HFF2019、HFF2027、HFF2030、HFF3014、HFF3015、HFF3017、HFF3026、HFF4012、HFF4014、HFF4018、HFF4020、HFF4023、HFF4030。
+
+完整料号清单见附件一（对照表）；如需，我司可另行发送电子表格。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 50 / 100 / 500 / 1,000 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明替代品牌及料号。
+6. 付款条件。
+7. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+8. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+9. 滤清器类型：干式/油式、海绵式/纸质；尺寸及适用车型。
+
+另请提供产品目录/价格表，以及「参考品牌 → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="ref">
+  <h2>Справочная таблица позиций</h2>
+  <p class="lead">Артикулы приведены как кросс-ориентиры. Поставщик подбирает аналог по размерам и применяемости; таблицу можно приложить к любому шаблону как Приложение 1.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:14%">Бренд</th>
+        <th style="width:68%">Артикул</th>
+        <th style="width:18%">Подкатегория</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>Emgo</td>
+          <td>10-28410, 10-30010, 10-37500, 10-55510, 10-55660, 10-55674, 10-79100, 10-79130, 10-82220, 10-82224, 10-82230, 10-82240, 10-82250, 10-99200, 10-791200</td>
+          <td>Масляные</td>
+        </tr>
+        <tr>
+          <td>Hiflofiltro</td>
+          <td>HF112, HF116, HF117, HF133, HF136, HF138, HF138RC, HF139, HF140, HF141, HF142, HF145, HF147, HF148, HF204, HF204RC, HF205, HF207, HF303, HF303C, HF303RC, HF401</td>
+          <td>Масляные</td>
+        </tr>
+        <tr><td>K&amp;N</td><td>KN-303</td><td>Масляные</td></tr>
+        <tr><td>Mahle</td><td>OC 574, OC 575</td><td>Масляные</td></tr>
+        <tr><td>Meiwa</td><td>H1013, H1015, S3001, S3012</td><td>Масляные</td></tr>
+
+        <tr>
+          <td>Emgo</td>
+          <td>12-90050, 12-90060, 12-90322, 12-90342, 12-90346, 12-90347, 12-90348, 12-90349, 12-90460, 12-90468, 12-90550, 12-90582, 12-90592, 12-90734, 12-91140, 12-91142, 12-91160, 12-91170, 12-91470, 12-91480, 12-91484, 12-92448, 12-92512, 12-92514, 12-92516, 12-92545, 12-92570, 12-92584, 12-92682, 12-92918, 12-92942, 12-92948, 12-93016, 12-93026, 12-93714, 12-93742, 12-93831, 12-93834, 12-93836, 12-93860, 12-94036, 12-94073, 12-94078, 12-94082, 12-94084, 12-94092, 12-94094, 12-94386, 12-94388, 12-94392, 12-94462, 12-94464, 12-94480, 12-95500, 12-95520, 12-95526, 12-95570, 12-95580, 12-95866, 12-95882</td>
+          <td>Воздушные</td>
+        </tr>
+        <tr>
+          <td>Hiflofiltro (HFA)</td>
+          <td>HFA1501, HFA1602, HFA1603, HFA1606, HFA1607, HFA1615, HFA1616, HFA1618, HFA1619, HFA1620, HFA1710, HFA1712, HFA1715, HFA1801, HFA1909, HFA1910, HFA1915, HFA1917, HFA1919, HFA1921, HFA1922, HFA1926, HFA1929, HFA1931, HFA1933, HFA1934, HFA1936, HFA1937, HFA2406, HFA2505, HFA2602, HFA2604, HFA2605, HFA2606, HFA2607, HFA2608, HFA2609, HFA2610, HFA2703, HFA2801, HFA2802, HFA2909, HFA2910, HFA2914, HFA2915, HFA2916, HFA2918, HFA2919, HFA2920, HFA2921, HFA2922, HFA2923, HFA2925, HFA3501, HFA3602, HFA3605, HFA3606, HFA3607, HFA3609, HFA3611, HFA3612, HFA3613, HFA3616, HFA3617, HFA3618, HFA3620, HFA3621, HFA3705, HFA3803, HFA3804, HFA3807, HFA3808, HFA3907, HFA3908, HFA3909, HFA3910, HFA3911, HFA3912, HFA3913, HFA3914, HFA4603, HFA4606, HFA4607, HFA4610, HFA4611, HFA4612, HFA4613, HFA4614, HFA4615, HFA4707, HFA4906, HFA4910, HFA4911, HFA4912, HFA4913, HFA4914, HFA4915, HFA4917, HFA4920, HFA4921, HFA4922, HFA4924</td>
+          <td>Воздушные</td>
+        </tr>
+        <tr>
+          <td>Hiflofiltro (HFF)</td>
+          <td>HFF1015, HFF1016, HFF1018, HFF1022, HFF1025, HFF1026, HFF1030, HFF2015, HFF2017, HFF2019, HFF2027, HFF2030, HFF3014, HFF3015, HFF3017, HFF3026, HFF4012, HFF4014, HFF4018, HFF4020, HFF4023, HFF4030</td>
+          <td>Воздушные</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">Для масляных фильтров уточняйте тип (картридж/навинчиваемый) и резьбу; для воздушных — материал (бумага/поролон) и габариты. Это снимает большинство уточнений в переписке.</div>
+</section>
+
+<section id="check">
+  <h2>Чек-лист к ответу поставщика</h2>
+  <p class="lead">Проверяйте ответ по пунктам; при отсутствии любого из них запрос считается неполным.</p>
+  <div class="tbl-wrap">
+    <table class="check">
+      <thead><tr>
+        <th>✓</th>
+        <th style="width:30%">Пункт</th>
+        <th style="width:70%">Что должно быть в ответе</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>Цена</td><td>Цена за единицу в CNY, оптовая; отдельно с НДС и без НДС, с указанием ставки</td></tr>
+        <tr><td>☐</td><td>Наличие / срок</td><td>Наличие на складе по каждой позиции; при отсутствии — срок производства в рабочих днях</td></tr>
+        <tr><td>☐</td><td>MOQ</td><td>Минимальный заказ по каждой позиции; возможность смешанной партии</td></tr>
+        <tr><td>☐</td><td>Скидки за объём</td><td>Шкала скидок от 50 / 100 / 500 / 1 000 шт</td></tr>
+        <tr><td>☐</td><td>Аналог (摩配副厂件)</td><td>Конкретный бренд и артикул аналога по каждой позиции; подтверждение применимости</td></tr>
+        <tr><td>☐</td><td>Условия оплаты</td><td>Порядок оплаты (предоплата/по факту/аккредитив), срок действия предложения</td></tr>
+        <tr><td>☐</td><td>Упаковка</td><td>Neutral packing или private label; стоимость упаковки и минимальный тираж для маркировки</td></tr>
+        <tr><td>☐</td><td>Сертификаты</td><td>ISO 9001, IATF 16949 — сканы с действующим сроком и областью действия</td></tr>
+        <tr><td>☐</td><td>Каталог и кросс-таблица</td><td>Прайс-лист/каталог и таблица «бренд-ориентир → ваш артикул»</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Шаблоны универсальные: перед отправкой проверьте комплектность артикулов и при необходимости приложите справочную таблицу. Тексты не содержат условий доставки и расчётов за пределами внутреннего рынка Китая.
+</footer>
+
+</div>
+
+<script>
+function copyText(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var text = el.innerText;
+  var done = function () {
+    var old = btn.getAttribute('data-label') || btn.textContent;
+    btn.setAttribute('data-label', old);
+    btn.textContent = 'Скопировано ✓';
+    btn.classList.add('done');
+    setTimeout(function () {
+      btn.textContent = old;
+      btn.classList.remove('done');
+    }, 1800);
+  };
+  var fallback = function () {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.left = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    if (ok) { done(); } else { alert('Не удалось скопировать. Выделите текст вручную.'); }
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  } else {
+    fallback();
+  }
+}
+</script>
+</body>
+</html>

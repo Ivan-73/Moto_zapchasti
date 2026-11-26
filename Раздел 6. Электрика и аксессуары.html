@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Универсальные запросы КП — Раздел 6. Электрика и аксессуары: АКБ и цепи</title>
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#fff; --ink:#1b2430; --muted:#5b6775;
+    --line:#dde3e9; --accent:#0f4c81; --accent2:#e9f1f8;
+    --ok:#1e7a46; --warn:#8a5a00;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 48px;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{background:linear-gradient(135deg,#0f4c81,#123a5c);color:#fff;padding:30px 0 24px;margin-bottom:22px}
+  header h1{margin:0 0 6px;font-size:24px;line-height:1.3}
+  header .date{opacity:.9;font-size:13.5px}
+  .req{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:16px;
+       background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+       border-radius:10px;padding:12px 16px;font-size:13px}
+  .req b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;opacity:.85}
+  section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          padding:18px 18px 22px;margin:0 0 20px}
+  h2{font-size:19px;margin:0 0 6px;color:var(--accent)}
+  h3{font-size:16px;margin:20px 0 8px}
+  .lead{color:var(--muted);font-size:14px;margin:0 0 12px}
+  .tbl-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+  th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top;text-align:left}
+  th{background:var(--accent2);color:#123a5c;font-size:12.5px;font-weight:600}
+  tr:nth-child(even) td{background:#fbfcfd}
+  a{color:#0b5fa5}
+  .copybox{border:1px solid var(--line);border-radius:10px;margin:12px 0 18px;overflow:hidden}
+  .copyhead{display:flex;align-items:center;justify-content:space-between;gap:12px;
+            background:#f2f6fa;border-bottom:1px solid var(--line);padding:10px 14px}
+  .copyhead span{font-weight:600;font-size:14px;color:#123a5c}
+  button.copy{cursor:pointer;border:1px solid #b9cfe1;background:#fff;color:#0f4c81;
+              border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+  button.copy:hover{background:var(--accent2)}
+  button.copy.done{background:#e4f5ea;border-color:#b9e3c8;color:var(--ok)}
+  .doc{white-space:pre-wrap;word-wrap:break-word;padding:16px 18px;font-size:14px;line-height:1.6}
+  .note{background:#fffaf0;border-left:4px solid #e0a800;padding:10px 14px;
+        border-radius:0 8px 8px 0;margin:12px 0;font-size:13.5px}
+  ul{margin:8px 0 0 20px;padding:0}
+  li{margin:4px 0}
+  .check td:first-child{width:34px;text-align:center;font-size:16px;color:#0f4c81}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:22px}
+  @media (max-width:760px){
+    .req{grid-template-columns:1fr}
+    header h1{font-size:20px}
+    .copyhead{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Универсальные запросы КП — Раздел 6. Электрика и аксессуары: АКБ и цепи</h1>
+    <div class="date">Дата подготовки: 26 ноября 2026 г. · шаблоны для самостоятельной рассылки поставщикам</div>
+    <div class="req">
+      <div><b>Закупщик</b>天津瑞八国际贸易有限公司<br>Tianjin Ruiba International Trade Co., Ltd.</div>
+      <div><b>Тип</b>有限责任公司（外国自然人独资）</div>
+      <div><b>Профиль</b>摩托车及零配件批发/零售；货物进出口；进出口代理；供应链管理服务；国内贸易代理；汽车零配件批发/零售</div>
+      <div><b>Роль в запросах</b>采购商 — оптовая закупка на внутреннем рынке Китая: цены, наличие, MOQ, сроки производства, аналоги (摩配副厂件)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="where">
+  <h2>Куда отправлять (справочно)</h2>
+  <p class="lead">Производители АКБ из Справки, Раздел 6. Ссылки ведут на профиль/сайт компании.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:4%">№</th>
+        <th style="width:30%">Название (CN / EN)</th>
+        <th style="width:16%">Локация</th>
+        <th style="width:26%">Профиль</th>
+        <th style="width:24%">Источник</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>广州凯格电池<br>Kage Batteries (Guangzhou)</td>
+          <td>Гуанчжоу, Гуандун</td>
+          <td>Литиевые (LiFePO4) мото-АКБ, powersport-батареи, OEM/ODM</td>
+          <td><a href="https://www.kagebatteries.com/" target="_blank" rel="noopener">kagebatteries.com</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>广州市虎头实业有限公司<br>Guangzhou Tiger Head Industrial Co., Ltd.</td>
+          <td>Гуанчжоу (Хайчжу), Гуандун</td>
+          <td>Свинцово-кислотные мото-АКБ (YTX/12N-серии), SMF</td>
+          <td><a href="https://www.tigerheadbattery.com/attachment/19/source/MOTORCYCLE_BATTERY__compressed_145843.pdf" target="_blank" rel="noopener">tigerheadbattery.com</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>松立集团<br>Songli Group</td>
+          <td>Фуцзянь</td>
+          <td>Свинцово-кислотные и MF мото-АКБ, OEM</td>
+          <td><a href="https://www.songligroup.com/oem-manufacturer-deep-cycle-motorcycle-battery-tcs-smf-battery-12n5-bs-blue-songli.html" target="_blank" rel="noopener">songligroup.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><b>Примечания:</b> <b>BS Battery</b> — европейский бренд (Франция/Тунис), прямого подтверждения завода в Китае нет; для прямого запроса не используется. <b>RK Chain</b> — японский бренд, официальный дилер в материковом Китае не подтверждён; для прямого запроса не используется. В запросах к китайским заводам применяется формулировка «аналог, совместимый с …».</div>
+</section>
+
+<section id="t1">
+  <h2>Шаблон запроса №1: Аккумуляторы SLA (свинцово-кислотные, YTX/12N-серии)</h2>
+  <p class="lead">Универсальный текст для производителей свинцово-кислотных мото-АКБ. Позиции — ориентиры совместимости.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru1', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru1">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: свинцово-кислотные (SLA/SMF) аккумуляторы для мотоциклов.
+
+Перечень позиций (ориентир совместимости — BS-Battery):
+— BTX9-BS, BTZ10S-BS, BTX12-BS, BT12B-BS, BTZ14S-BS, BTX14-BS, BT14B-BS, BTX7A-BS, BGZ16HL.
+— Дублирующие позиции: BTX9 SLA, BTZ10S SLA, BTX12 SLA, BT12B-4 SLA, BTZ14S SLA, BTX14 SLA, BT14B SLA.
+
+Просим предложить аналог, совместимый с указанными позициями, либо собственный артикул с подтверждением совместимости по напряжению, ёмкости, габаритам, полярности и типу клемм. Полный перечень — в Приложении 1.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 50 / 200 / 500 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула.
+6. Спецификация: номинальное напряжение (В), ёмкость (Ah), пусковой ток CCA (A), габариты (Д×Ш×В), полярность, тип клемм, вес.
+7. Тип исполнения: обслуживаемый / необслуживаемый (MF), с заливкой кислоты или активированный.
+8. Условия оплаты.
+9. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+10. Сертификаты: MSDS, CE; ISO 9001 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «BS-Battery → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn1', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn1">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车铅酸（SLA/SMF）蓄电池。
+
+参考品项（对应 BS-Battery）：
+— BTX9-BS、BTZ10S-BS、BTX12-BS、BT12B-BS、BTZ14S-BS、BTX14-BS、BT14B-BS、BTX7A-BS、BGZ16HL。
+— 对应重复品项：BTX9 SLA、BTZ10S SLA、BTX12 SLA、BT12B-4 SLA、BTZ14S SLA、BTX14 SLA、BT14B SLA。
+
+请提供与上述品项兼容的替代件，或贵司自有料号，并确认电压、容量、外形尺寸、极性和端子型式相匹配。完整清单见附件一。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 50 / 200 / 500 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明品牌及料号。
+6. 规格参数：额定电压（V）、容量（Ah）、冷启动电流 CCA（A）、外形尺寸（长×宽×高）、极性、端子型式、重量。
+7. 类型：可维护/免维护（MF）、是否预注液或已激活。
+8. 付款条件。
+9. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+10. 认证资料：MSDS、CE、ISO 9001，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「BS-Battery → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="t2">
+  <h2>Шаблон запроса №2: Аккумуляторы LiFePO4 (литиевые мото)</h2>
+  <p class="lead">Универсальный текст для производителей литиевых мото-АКБ. Отдельно запрашиваются BMS, тип ячеек и условия гарантии.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru2', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru2">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: литиевые (LiFePO4) аккумуляторы для мотоциклов.
+
+Перечень позиций (ориентир совместимости — BS-Battery):
+— BSLI-06, BSLI-04.
+
+Просим предложить аналог, совместимый с указанными позициями, либо собственный артикул с подтверждением совместимости по напряжению, ёмкости, габаритам, полярности и типу клемм. Полный перечень — в Приложении 1.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 50 / 200 / 500 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула.
+6. Спецификация: номинальное напряжение (В), ёмкость (Ah), пусковой ток CCA (A), габариты (Д×Ш×В), полярность, тип клемм, вес.
+7. Наличие BMS: тип, защита (перезаряд/переразряд/КЗ/температура), балансировка.
+8. Тип ячеек (LiFePO4/A123 или иной), производитель ячеек.
+9. Гарантийный срок и температурный диапазон эксплуатации.
+10. Возможность зарядки штатным зарядным устройством; требования к зарядному напряжению.
+11. Условия оплаты.
+12. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+13. Сертификаты: UN38.3, MSDS, CE (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «BS-Battery → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn2', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn2">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车磷酸铁锂（LiFePO4）蓄电池。
+
+参考品项（对应 BS-Battery）：
+— BSLI-06、BSLI-04。
+
+请提供与上述品项兼容的替代件，或贵司自有料号，并确认电压、容量、外形尺寸、极性和端子型式相匹配。完整清单见附件一。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 50 / 200 / 500 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明品牌及料号。
+6. 规格参数：额定电压（V）、容量（Ah）、冷启动电流 CCA（A）、外形尺寸（长×宽×高）、极性、端子型式、重量。
+7. BMS 配置：类型、保护功能（过充/过放/短路/温度）、均衡功能。
+8. 电芯类型（LiFePO4/A123 或其他）及电芯厂家。
+9. 质保期限及工作温度范围。
+10. 是否可使用原车充电器充电；充电电压要求。
+11. 付款条件。
+12. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+13. 认证资料：UN38.3、MSDS、CE，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「BS-Battery → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="t3">
+  <h2>Шаблон запроса №3: Цепи 520/525/530 XRE (120L, клёпаные, Gold/Black/Classic Steel)</h2>
+  <p class="lead">Универсальный текст для производителей цепей. Допускается предложение оригинала RK либо аналога с указанием бренда и артикула.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru3', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru3">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции.
+
+Предмет запроса: приводные цепи для мотоциклов.
+
+Перечень позиций (ориентир — RK, серия XRE, 120L, клёпаные):
+— 520 XRE 120L: Gold, Black, Classic Steel.
+— 525 XRE 120L: Gold, Black, Classic Steel.
+— 530 XRE 120L: Gold, Black, Classic Steel.
+
+Просим предложить оригинал RK либо качественный аналог (CHOHO / AM / SFR / KMC) с указанием бренда, артикула, типа замка (клёпаный), длины 120L и цвета. Полный перечень — в Приложении 1.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ): в рулонах/коробках.
+4. Скидки за объём при заказе от 50 / 200 / 500 рулонов.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула.
+6. Спецификация: шаг цепи (520/525/530), длина (120L), тип замка (клёпаный), материал, покрытие/цвет, тип уплотнения (X-ring/O-ring), разрывная нагрузка, ресурс.
+7. Условия оплаты.
+8. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+9. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «RK → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn3', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn3">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项向贵司询价，请予报价。
+
+询价品项：摩托车传动链条。
+
+参考品项（对应 RK 的 XRE 系列，120L，铆接式）：
+— 520 XRE 120L：Gold、Black、Classic Steel。
+— 525 XRE 120L：Gold、Black、Classic Steel。
+— 530 XRE 120L：Gold、Black、Classic Steel。
+
+请提供 RK 原装产品，或同等质量的替代件（CHOHO / AM / SFR / KMC），并注明品牌、料号、接头型式（铆接式）、长度 120L 及颜色。完整清单见附件一。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 最小起订量（MOQ）：按卷/箱。
+4. 50 / 200 / 500 卷以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明品牌及料号。
+6. 规格参数：节距（520/525/530）、长度（120L）、接头型式（铆接）、材质、表面处理/颜色、密封型式（X-ring/O-ring）、抗拉强度、使用寿命。
+7. 付款条件。
+8. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+9. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「RK → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="special">
+  <h2>Специальное примечание по BS Battery и RK Chain</h2>
+  <ul>
+    <li><b>BS Battery:</b> европейский бренд (Франция/Тунис), официального завода в Китае не подтверждено. Для SLA и LiFePO4 корректно запрашивать у Kage / Tiger Head / Songli <b>аналог с совместимым форм-фактором</b>: номинальное напряжение, ёмкость (Ah), габариты (Д×Ш×В), полярность, тип клемм. Не утверждать, что завод «делает BS Battery».</li>
+    <li><b>RK Chain:</b> японский бренд, официальный дилер в материковом Китае не подтверждён. В запросах к китайским производителям цепей используется формулировка <b>«аналог, совместимый с RK 520/525/530 XRE, 120L, клёпаный»</b> с запросом кросс-таблицы.</li>
+    <li><b>Контрактная практика:</b> в спецификации и на упаковке указывается собственный бренд завода или private label закупщика; маркировка «BS Battery» / «RK» без авторизации недопустима.</li>
+  </ul>
+</section>
+
+<section id="ref">
+  <h2>Справочная таблица позиций</h2>
+  <p class="lead">Позиции приведены как ориентиры совместимости. Полный перечень — в Приложении 1.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:15%">Бренд / ориентир</th>
+        <th style="width:31%">Артикул</th>
+        <th style="width:14%">Подкатегория</th>
+        <th style="width:40%">Краткая спецификация</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>BS-Battery</td>
+          <td>BTX9-BS, BTZ10S-BS, BTX12-BS, BT12B-BS, BTZ14S-BS, BTX14-BS, BT14B-BS, BTX7A-BS, BGZ16HL</td>
+          <td>SLA</td>
+          <td>12 В, свинцово-кислотный, MF/SLA; ёмкость и CCA — по позиции; полярность и клеммы уточняются</td>
+        </tr>
+        <tr>
+          <td>BS-Battery</td>
+          <td>BTX9 SLA, BTZ10S SLA, BTX12 SLA, BT12B-4 SLA, BTZ14S SLA, BTX14 SLA, BT14B SLA</td>
+          <td>SLA</td>
+          <td>12 В, SLA; дублирующие позиции листа; сверить ёмкость/габариты с базовыми артикулами</td>
+        </tr>
+        <tr>
+          <td>BS-Battery</td>
+          <td>BSLI-06, BSLI-04</td>
+          <td>LiFePO4</td>
+          <td>12 В, LiFePO4; наличие BMS, тип ячеек, вес и CCA — по позиции</td>
+        </tr>
+        <tr>
+          <td>RK</td>
+          <td>520 XRE 120L — Gold, Black, Classic Steel</td>
+          <td>Цепь</td>
+          <td>Шаг 520; 120L; клёпаный замок; X-ring; покрытие/цвет по исполнению</td>
+        </tr>
+        <tr>
+          <td>RK</td>
+          <td>525 XRE 120L — Gold, Black, Classic Steel</td>
+          <td>Цепь</td>
+          <td>Шаг 525; 120L; клёпаный замок; X-ring; покрытие/цвет по исполнению</td>
+        </tr>
+        <tr>
+          <td>RK</td>
+          <td>530 XRE 120L — Gold, Black, Classic Steel</td>
+          <td>Цепь</td>
+          <td>Шаг 530; 120L; клёпаный замок; X-ring; покрытие/цвет по исполнению</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">Для АКБ критичны габариты и полярность: даже при совпадении ёмкости неверная полярность или высота клемм делают батарею непригодной. Для цепей обязательно фиксируйте шаг, длину и тип замка.</div>
+</section>
+
+<section id="check">
+  <h2>Чек-лист к ответу поставщика</h2>
+  <p class="lead">Проверяйте ответ по пунктам; при отсутствии любого из них запрос считается неполным.</p>
+  <div class="tbl-wrap">
+    <table class="check">
+      <thead><tr>
+        <th>✓</th>
+        <th style="width:30%">Пункт</th>
+        <th style="width:70%">Что должно быть в ответе</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>Цена</td><td>Цена за единицу в CNY, оптовая; отдельно с НДС и без НДС, с указанием ставки</td></tr>
+        <tr><td>☐</td><td>Наличие / срок</td><td>Наличие на складе по каждой позиции; при отсутствии — срок производства в рабочих днях</td></tr>
+        <tr><td>☐</td><td>MOQ</td><td>АКБ — шт.; цепи — рулоны/коробки</td></tr>
+        <tr><td>☐</td><td>Скидки за объём</td><td>АКБ — 50/200/500 шт; цепи — 50/200/500 рулонов</td></tr>
+        <tr><td>☐</td><td>Аналог (摩配副厂件)</td><td>Конкретный бренд, артикул и кросс-номер; подтверждение совместимости</td></tr>
+        <tr><td>☐</td><td>Спецификация АКБ</td><td>Напряжение, ёмкость Ah, CCA, габариты, полярность, тип клемм, вес; для LiFePO4 — BMS, тип ячеек, гарантия, температура</td></tr>
+        <tr><td>☐</td><td>Спецификация цепей</td><td>Шаг, длина, тип замка, материал, покрытие/цвет, ресурс, разрывная нагрузка</td></tr>
+        <tr><td>☐</td><td>Условия оплаты</td><td>Порядок оплаты (предоплата/по факту/аккредитив), срок действия предложения</td></tr>
+        <tr><td>☐</td><td>Упаковка</td><td>Neutral packing или private label; стоимость упаковки и минимальный тираж для маркировки</td></tr>
+        <tr><td>☐</td><td>Сертификаты</td><td>АКБ: UN38.3, MSDS, CE; цепи: ISO 9001, IATF 16949 — сканы с действующим сроком</td></tr>
+        <tr><td>☐</td><td>Каталог и кросс-таблица</td><td>Прайс-лист/каталог и таблица «BS-Battery / RK → ваш артикул»</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Шаблоны универсальные: перед отправкой проверьте комплектность артикулов и при необходимости приложите справочную таблицу. Тексты не содержат условий доставки и расчётов за пределами внутреннего рынка Китая.
+</footer>
+
+</div>
+
+<script>
+function copyText(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var text = el.innerText;
+  var done = function () {
+    var old = btn.getAttribute('data-label') || btn.textContent;
+    btn.setAttribute('data-label', old);
+    btn.textContent = 'Скопировано ✓';
+    btn.classList.add('done');
+    setTimeout(function () {
+      btn.textContent = old;
+      btn.classList.remove('done');
+    }, 1800);
+  };
+  var fallback = function () {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.left = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    if (ok) { done(); } else { alert('Не удалось скопировать. Выделите текст вручную.'); }
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  } else {
+    fallback();
+  }
+}
+</script>
+</body>
+</html>

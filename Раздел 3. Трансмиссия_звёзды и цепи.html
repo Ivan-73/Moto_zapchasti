@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Универсальные запросы КП — Раздел 3. Трансмиссия: звёзды и цепи</title>
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#fff; --ink:#1b2430; --muted:#5b6775;
+    --line:#dde3e9; --accent:#0f4c81; --accent2:#e9f1f8;
+    --ok:#1e7a46; --warn:#8a5a00;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 48px;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{background:linear-gradient(135deg,#0f4c81,#123a5c);color:#fff;padding:30px 0 24px;margin-bottom:22px}
+  header h1{margin:0 0 6px;font-size:24px;line-height:1.3}
+  header .date{opacity:.9;font-size:13.5px}
+  .req{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:16px;
+       background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+       border-radius:10px;padding:12px 16px;font-size:13px}
+  .req b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;opacity:.85}
+  section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          padding:18px 18px 22px;margin:0 0 20px}
+  h2{font-size:19px;margin:0 0 6px;color:var(--accent)}
+  h3{font-size:16px;margin:20px 0 8px}
+  .lead{color:var(--muted);font-size:14px;margin:0 0 12px}
+  .tbl-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+  th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top;text-align:left}
+  th{background:var(--accent2);color:#123a5c;font-size:12.5px;font-weight:600}
+  tr:nth-child(even) td{background:#fbfcfd}
+  a{color:#0b5fa5}
+  .copybox{border:1px solid var(--line);border-radius:10px;margin:12px 0 18px;overflow:hidden}
+  .copyhead{display:flex;align-items:center;justify-content:space-between;gap:12px;
+            background:#f2f6fa;border-bottom:1px solid var(--line);padding:10px 14px}
+  .copyhead span{font-weight:600;font-size:14px;color:#123a5c}
+  button.copy{cursor:pointer;border:1px solid #b9cfe1;background:#fff;color:#0f4c81;
+              border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+  button.copy:hover{background:var(--accent2)}
+  button.copy.done{background:#e4f5ea;border-color:#b9e3c8;color:var(--ok)}
+  .doc{white-space:pre-wrap;word-wrap:break-word;padding:16px 18px;font-size:14px;line-height:1.6}
+  .note{background:#fffaf0;border-left:4px solid #e0a800;padding:10px 14px;
+        border-radius:0 8px 8px 0;margin:12px 0;font-size:13.5px}
+  .special{background:#f1f9f4;border-left:4px solid #2e8b57;padding:10px 14px;
+           border-radius:0 8px 8px 0;margin:12px 0;font-size:13.5px}
+  ul{margin:8px 0 0 20px;padding:0}
+  li{margin:4px 0}
+  .check td:first-child{width:34px;text-align:center;font-size:16px;color:#0f4c81}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:22px}
+  @media (max-width:760px){
+    .req{grid-template-columns:1fr}
+    header h1{font-size:20px}
+    .copyhead{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Универсальные запросы КП — Раздел 3. Трансмиссия: звёзды и цепи</h1>
+    <div class="date">Дата подготовки: 25 ноября 2026 г. · шаблоны для самостоятельной рассылки поставщикам</div>
+    <div class="req">
+      <div><b>Закупщик</b>天津瑞八国际贸易有限公司<br>Tianjin Ruiba International Trade Co., Ltd.</div>
+      <div><b>Тип</b>有限责任公司（外国自然人独资）</div>
+      <div><b>Профиль</b>摩托车及零配件批发/零售；货物进出口；进出口代理；供应链管理服务；国内贸易代理；汽车零配件批发/零售</div>
+      <div><b>Роль в запросах</b>采购商 — оптовая закупка на внутреннем рынке Китая: цены, наличие, MOQ, сроки производства, аналоги (摩配副厂件)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="where">
+  <h2>Куда отправлять (справочно)</h2>
+  <p class="lead">Поставщики из Справки, Раздел 3 и блок 3.1. Ссылки ведут на профиль/сайт компании.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:4%">№</th>
+        <th style="width:30%">Название (CN / EN)</th>
+        <th style="width:16%">Локация</th>
+        <th style="width:26%">Профиль</th>
+        <th style="width:24%">Источник</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>青岛征和工业股份有限公司<br>Qingdao Choho Industrial Co., Ltd. (CHOHO)</td>
+          <td>Циндао, Шаньдун</td>
+          <td>Мотоциклетные цепи, звёзды, цепи ГРМ; A-share 003033, экспорт в 100+ стран</td>
+          <td><a href="http://www.chohogroup.net/case/cheliangqudong.jhtml" target="_blank" rel="noopener">chohogroup.net</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>重庆万里江发链轮有限公司<br>Chongqing Wanlijiangfa Sprocket Co., Ltd.</td>
+          <td>Чунцин</td>
+          <td>Мотоциклетные звёзды (передние/задние), цепные передачи, OEM</td>
+          <td><a href="https://www.jfsprockets.com/" target="_blank" rel="noopener">jfsprockets.com</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>重庆爵狼摩托车配件有限公司<br>Chongqing Juelang Motorcycle Parts Co., Ltd.</td>
+          <td>Чунцин</td>
+          <td>Комплекты «цепь + звёзды», цепи, звёзды; OEM/ODM</td>
+          <td><a href="http://cqjuelang.moto188.com/" target="_blank" rel="noopener">cqjuelang.moto188.com</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>重庆赛特尔机械<br>Chongqing Saiteer Machinery</td>
+          <td>Чунцин</td>
+          <td>Комплекты «цепь + звёзды», звёзды для Haojue и др. (низкая достоверность)</td>
+          <td><a href="https://www.facebook.com/groups/381029686363357/posts/1396604054805910/" target="_blank" rel="noopener">facebook.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="t1">
+  <h2>Шаблон запроса №1: Передние звёзды (front sprockets)</h2>
+  <p class="lead">Универсальный текст — подходит для любого поставщика из списка. Полный перечень артикулов JT — в справочной таблице (Приложение 1).</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru1', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru1">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: передние звёзды (front sprockets) для мотоциклов.
+
+Перечень позиций по брендам-ориентирам:
+— JT (серия JTF): JTF284, JTF293, JTF296, JTF297, JTF308, JTF333, JTF339, JTF423, JTF427, JTF430, JTF432, JTF433, JTF444, JTF512, JTF513, JTF516, JTF517, JTF519, JTF520, JTF565, JTF569, JTF579, JTF580, JTF582, JTF583, JTF1307, JTF1321, JTF1323, JTF1332, JTF1344, JTF1370, JTF1371, JTF1372, JTF1373, JTF1446, JTF1529, JTF1535, JTF1536, JTF1537, JTF1538, JTF1539, JTF1565, JTF1579, JTF1586, JTF1590, JTF1591, JTF1594, JTF1595; число зубьев 12–18T; исполнения RB (с демпфером). Полный перечень артикулов — в Приложении 1.
+— PBR: 2041 C15, 2073 C15.
+— Sunstar: 3A114, 3A314, 32516, 37915, 38714, 38814, 39415, 40414, 40815, 41115, 41116, 41215, 41416, 42816, 51116, 51217, 51715, 51917, 52216, 55617, 81916.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 100 / 500 / 1 000 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула аналога.
+6. Спецификация: шаг цепи, число зубьев, материал (сталь / алюминий / сталь-алюминий), термообработка, наличие демпфера.
+7. Условия оплаты.
+8. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+9. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «JT / PBR / Sunstar → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn1', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn1">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车前链轮（front sprockets）。
+
+参考品牌及品项：
+— JT（JTF 系列）：JTF284、JTF293、JTF296、JTF297、JTF308、JTF333、JTF339、JTF423、JTF427、JTF430、JTF432、JTF433、JTF444、JTF512、JTF513、JTF516、JTF517、JTF519、JTF520、JTF565、JTF569、JTF579、JTF580、JTF582、JTF583、JTF1307、JTF1321、JTF1323、JTF1332、JTF1344、JTF1370、JTF1371、JTF1372、JTF1373、JTF1446、JTF1529、JTF1535、JTF1536、JTF1537、JTF1538、JTF1539、JTF1565、JTF1579、JTF1586、JTF1590、JTF1591、JTF1594、JTF1595；齿数 12–18T；RB 为带缓冲结构。完整料号清单见附件一。
+— PBR：2041 C15、2073 C15。
+— Sunstar：3A114、3A314、32516、37915、38714、38814、39415、40414、40815、41115、41116、41215、41416、42816、51116、51217、51715、51917、52216、55617、81916。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 100 / 500 / 1,000 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明替代品牌及料号。
+6. 规格参数：链条节距、齿数、材质（钢/铝/钢铝复合）、热处理、是否带缓冲胶。
+7. 付款条件。
+8. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+9. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「JT / PBR / Sunstar → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="t2">
+  <h2>Шаблон запроса №2: Задние звёзды (rear sprockets)</h2>
+  <p class="lead">Универсальный текст для поставщиков задних звёзд. Полный перечень артикулов JT — в справочной таблице (Приложение 1).</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru2', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru2">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: задние звёзды (rear sprockets) для мотоциклов.
+
+Перечень позиций по брендам-ориентирам:
+— JT (серия JTR): JTR210, JTR210SC, JTR245/2, JTR251SC, JTR300, JTR302, JTR305, JTR460, JTR478, JTR479, JTR486, JTR488, JTR498, JTR499, JTR502, JTR807, JTR808, JTR816, JTR822, JTR823, JTR829, JTR846, JTR853, JTR855, JTR859, JTR867, JTR1304, JTR1306, JTR1307, JTR1316, JTR1317, JTR1331, JTR1332, JTR1340, JTR1346, JTR1478, JTR1489, JTR1493, JTR1792, JTR1797, JTR1800, JTR1847, JTR1876, JTR1877; число зубьев 38–52T; исполнения SC (сталь) и /2 (усиленная). Полный перечень артикулов — в Приложении 1.
+— PBR: 4357 42 C45, 4405 46 C45.
+— Sunstar: 1-3577-47, 1-3685-44, 1-4474-47, 1-4483-42, 1-4633-41, 1-4633-46, 1-5353-42, 5-4523-46 (алюминий).
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 100 / 500 / 1 000 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула аналога.
+6. Спецификация: шаг цепи, число зубьев, материал (сталь / алюминий / сталь-алюминий), термообработка, наличие демпфера.
+7. Условия оплаты.
+8. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+9. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «JT / PBR / Sunstar → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn2', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn2">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车后链轮（rear sprockets）。
+
+参考品牌及品项：
+— JT（JTR 系列）：JTR210、JTR210SC、JTR245/2、JTR251SC、JTR300、JTR302、JTR305、JTR460、JTR478、JTR479、JTR486、JTR488、JTR498、JTR499、JTR502、JTR807、JTR808、JTR816、JTR822、JTR823、JTR829、JTR846、JTR853、JTR855、JTR859、JTR867、JTR1304、JTR1306、JTR1307、JTR1316、JTR1317、JTR1331、JTR1332、JTR1340、JTR1346、JTR1478、JTR1489、JTR1493、JTR1792、JTR1797、JTR1800、JTR1847、JTR1876、JTR1877；齿数 38–52T；SC 为钢制，/2 为加强型。完整料号清单见附件一。
+— PBR：4357 42 C45、4405 46 C45。
+— Sunstar：1-3577-47、1-3685-44、1-4474-47、1-4483-42、1-4633-41、1-4633-46、1-5353-42、5-4523-46（铝制）。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 100 / 500 / 1,000 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明替代品牌及料号。
+6. 规格参数：链条节距、齿数、材质（钢/铝/钢铝复合）、热处理、是否带缓冲胶。
+7. 付款条件。
+8. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+9. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「JT / PBR / Sunstar → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="t3">
+  <h2>Шаблон запроса №3: Цепи и комплекты «цепь + звёзды»</h2>
+  <p class="lead">Универсальный текст для поставщиков цепей и комплектов. Если поставщик торгует только звёздами, комплекты запрашиваются как опция.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru3', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru3">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: приводные цепи и комплекты «цепь + звёзды» для мотоциклов.
+
+Перечень позиций:
+— Цепи RK: 520 XRE, 525 XRE, 530 XRE; 120 звеньев; клёпаное соединение; исполнения Gold, Black, Classic Steel.
+— Аналоги цепей: CHOHO, AM, SFR — просим предложить эквивалентные позиции 520/525/530, 120L, с X-ring/O-ring и клёпаным замком.
+— Комплекты «цепь + передняя и задняя звезда»: просим предложить готовые комплекты под указанные цепи (шаг 520/525/530) с подбором числа зубьев по применяемости.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ): для цепей — в рулонах/коробках; для комплектов — в комплектах.
+4. Скидки за объём: для цепей — от 50 / 100 / 500 рулонов; для комплектов — от 100 / 500 / 1 000 комплектов.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула аналога.
+6. Спецификация цепи: шаг, число звеньев, тип уплотнения (X-ring/O-ring), разрывная нагрузка, тип замка, цветовое исполнение.
+7. Спецификация звёзд в комплекте: число зубьев, материал, термообработка, наличие демпфера.
+8. Условия оплаты.
+9. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+10. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «RK / CHOHO / AM / SFR → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn3', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn3">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车传动链条及「链条 + 链轮」套装。
+
+参考品项：
+— RK 链条：520 XRE、525 XRE、530 XRE；120 节；铆接式；Gold、Black、Classic Steel 款式。
+— 替代链条：CHOHO、AM、SFR — 请提供 520/525/530、120L、X-ring/O-ring、铆接式接头的对应品项。
+— 「链条 + 前链轮 + 后链轮」套装：请按上述链条规格（520/525/530）提供成套方案，并按适用车型配齿。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 最小起订量（MOQ）：链条按卷/箱，套装按套。
+4. 数量折扣：链条 50 / 100 / 500 卷以上；套装 100 / 500 / 1,000 套以上。
+5. 是否可提供优质替代件（摩配副厂件），请注明替代品牌及料号。
+6. 链条参数：节距、节数、密封型式（X-ring/O-ring）、抗拉强度、接头型式、颜色。
+7. 套装中链轮参数：齿数、材质、热处理、是否带缓冲胶。
+8. 付款条件。
+9. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+10. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「RK / CHOHO / AM / SFR → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="choho">
+  <h2>Специальный подраздел: CHOHO и аналоги JT JTF284.13 / JTR1346.44</h2>
+  <div class="special">
+    <b>Пояснение.</b> JTF284.13 и JTR1346.44 — номера каталога JT (передняя звезда 13T и задняя звезда 44T), а не номера CHOHO. Прямой кросс-таблицы JT → CHOHO в открытых источниках нет: на сайте CHOHO и в каталогах дистрибьюторов соответствие не публикуется. Поэтому в запросе не утверждаем наличие «аналога под номером JT», а просим: (а) подтвердить наличие прямых аналогов в каталоге; (б) при отсутствии — подтвердить изготовление по образцу/чертежу; (в) предоставить кросс-таблицу JT → CHOHO; (г) сообщить параметры и MOQ.
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru4', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru4">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и рассматривает CHOHO как приоритетного поставщика трансмиссии.
+
+В нашей заявке есть две позиции с пометкой «CHOHO?»:
+— передняя звезда JT JTF284.13 (13 зубьев, шаг 520, сталь);
+— задняя звезда JT JTR1346.44 (44 зуба, шаг 520).
+
+Просим подтвердить:
+1. Есть ли в каталоге CHOHO прямые аналоги указанных позиций (просьба указать артикул CHOHO).
+2. Если прямых аналогов нет — возможно ли изготовление по образцу/чертежу; какие данные необходимы (чертёж, образец, размеры посадочного места, шлицы).
+3. Просим предоставить кросс-таблицу JT → CHOHO (хотя бы по сериям JTF/JTR).
+4. Просим сообщить параметры: шаг цепи, число зубьев, материал, термообработка, наличие демпфера, толщина, посадочные размеры.
+5. Просим указать MOQ, срок производства и цену за единицу в CNY (с НДС и без НДС, с указанием ставки).
+
+Также просим приложить каталог/прайс-лист CHOHO по мотоциклетным звёздам и цепям.
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn4', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn4">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，并将 CHOHO 视为传动系统优先供应商。
+
+我司询价单中有两项标注「CHOHO?」：
+— 前链轮 JT JTF284.13（13 齿，520 节距，钢制）；
+— 后链轮 JT JTR1346.44（44 齿，520 节距）。
+
+请贵司确认以下事项：
+1. CHOHO 产品目录中是否有上述两项的直接对应型号（请注明 CHOHO 料号）。
+2. 如无直接对应型号，是否可按样品/图纸加工；需要我司提供哪些资料（图纸、样品、安装尺寸、花键参数）。
+3. 请提供 JT → CHOHO 对照表（至少按 JTF/JTR 系列）。
+4. 请说明参数：链条节距、齿数、材质、热处理、是否带缓冲胶、厚度、安装尺寸。
+5. 请说明最小起订量（MOQ）、生产周期，以及单价（人民币，含税/未税，并注明税率）。
+
+另请附上 CHOHO 摩托车链轮及链条的产品目录/价格表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="ref">
+  <h2>Справочная таблица позиций</h2>
+  <p class="lead">Артикулы приведены как кросс-ориентиры. Для JT и Sunstar допускается компактная группировка по сериям; полный перечень — в Приложении 1.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:14%">Бренд</th>
+        <th style="width:44%">Артикул / серия</th>
+        <th style="width:12%">Подкатегория</th>
+        <th style="width:30%">Краткая спецификация</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>JT (JTF)</td>
+          <td>Серии: JTF284, JTF293, JTF296, JTF297, JTF308, JTF333, JTF339, JTF423, JTF427, JTF430, JTF432, JTF433, JTF444, JTF512, JTF513, JTF516, JTF517, JTF519, JTF520, JTF565, JTF569, JTF579, JTF580, JTF582, JTF583, JTF1307, JTF1321, JTF1323, JTF1332, JTF1344, JTF1370, JTF1371, JTF1372, JTF1373, JTF1446, JTF1529, JTF1535, JTF1536, JTF1537, JTF1538, JTF1539, JTF1565, JTF1579, JTF1586, JTF1590, JTF1591, JTF1594, JTF1595 (включая исполнения RB)</td>
+          <td>Передняя</td>
+          <td>Шаг 520 (основной); 12–18T; сталь; RB — с демпфером</td>
+        </tr>
+        <tr>
+          <td>PBR</td>
+          <td>2041 C15, 2073 C15</td>
+          <td>Передняя</td>
+          <td>15T; сталь</td>
+        </tr>
+        <tr>
+          <td>Sunstar</td>
+          <td>3A114, 3A314, 32516, 37915, 38714, 38814, 39415, 40414, 40815, 41115, 41116, 41215, 41416, 42816, 51116, 51217, 51715, 51917, 52216, 55617, 81916</td>
+          <td>Передняя</td>
+          <td>14–17T; сталь</td>
+        </tr>
+
+        <tr>
+          <td>JT (JTR)</td>
+          <td>Серии: JTR210, JTR210SC, JTR245/2, JTR251SC, JTR300, JTR302, JTR305, JTR460, JTR478, JTR479, JTR486, JTR488, JTR498, JTR499, JTR502, JTR807, JTR808, JTR816, JTR822, JTR823, JTR829, JTR846, JTR853, JTR855, JTR859, JTR867, JTR1304, JTR1306, JTR1307, JTR1316, JTR1317, JTR1331, JTR1332, JTR1340, JTR1346, JTR1478, JTR1489, JTR1493, JTR1792, JTR1797, JTR1800, JTR1847, JTR1876, JTR1877</td>
+          <td>Задняя</td>
+          <td>Шаг 520/525/530; 38–52T; сталь; SC — сталь; /2 — усиленная</td>
+        </tr>
+        <tr>
+          <td>PBR</td>
+          <td>4357 42 C45, 4405 46 C45</td>
+          <td>Задняя</td>
+          <td>42T / 46T; сталь</td>
+        </tr>
+        <tr>
+          <td>Sunstar</td>
+          <td>1-3577-47, 1-3685-44, 1-4474-47, 1-4483-42, 1-4633-41, 1-4633-46, 1-5353-42, 5-4523-46</td>
+          <td>Задняя</td>
+          <td>41–47T; сталь; 5-4523-46 — алюминий</td>
+        </tr>
+
+        <tr>
+          <td>RK</td>
+          <td>520 XRE, 525 XRE, 530 XRE</td>
+          <td>Цепь</td>
+          <td>120L; клёпаная; Gold / Black / Classic Steel</td>
+        </tr>
+        <tr>
+          <td>CHOHO / AM / SFR</td>
+          <td>Аналоги 520 / 525 / 530 (по каталогу поставщика)</td>
+          <td>Цепь</td>
+          <td>120L; X-ring/O-ring; клёпаный замок; просьба указать артикул</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">Для звёзд обязательно фиксируйте в заявке шаг цепи, число зубьев, материал и наличие демпфера: без этих параметров поставщик не сможет дать корректную цену и подтвердить применяемость.</div>
+</section>
+
+<section id="check">
+  <h2>Чек-лист к ответу поставщика</h2>
+  <p class="lead">Проверяйте ответ по пунктам; при отсутствии любого из них запрос считается неполным.</p>
+  <div class="tbl-wrap">
+    <table class="check">
+      <thead><tr>
+        <th>✓</th>
+        <th style="width:30%">Пункт</th>
+        <th style="width:70%">Что должно быть в ответе</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>Цена</td><td>Цена за единицу в CNY, оптовая; отдельно с НДС и без НДС, с указанием ставки</td></tr>
+        <tr><td>☐</td><td>Наличие / срок</td><td>Наличие на складе по каждой позиции; при отсутствии — срок производства в рабочих днях</td></tr>
+        <tr><td>☐</td><td>MOQ</td><td>Минимальный заказ по каждой позиции (звёзды — шт.; цепи — рулоны/коробки; комплекты — комплекты)</td></tr>
+        <tr><td>☐</td><td>Скидки за объём</td><td>Шкала: звёзды — 100/500/1 000 шт; цепи — 50/100/500 рулонов; комплекты — 100/500/1 000</td></tr>
+        <tr><td>☐</td><td>Аналог (摩配副厂件)</td><td>Конкретный бренд и артикул аналога по каждой позиции; подтверждение применимости</td></tr>
+        <tr><td>☐</td><td>Спецификация</td><td>Шаг цепи, число зубьев, материал (сталь/алюминий/сталь-алюминий), термообработка, наличие демпфера</td></tr>
+        <tr><td>☐</td><td>Условия оплаты</td><td>Порядок оплаты (предоплата/по факту/аккредитив), срок действия предложения</td></tr>
+        <tr><td>☐</td><td>Упаковка</td><td>Neutral packing или private label; стоимость упаковки и минимальный тираж для маркировки</td></tr>
+        <tr><td>☐</td><td>Сертификаты</td><td>ISO 9001, IATF 16949 — сканы с действующим сроком и областью действия</td></tr>
+        <tr><td>☐</td><td>Каталог и кросс-таблица</td><td>Прайс-лист/каталог и таблица «JT / PBR / Sunstar / RK → ваш артикул»</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Шаблоны универсальные: перед отправкой проверьте комплектность артикулов и при необходимости приложите справочную таблицу. Тексты не содержат условий доставки и расчётов за пределами внутреннего рынка Китая.
+</footer>
+
+</div>
+
+<script>
+function copyText(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var text = el.innerText;
+  var done = function () {
+    var old = btn.getAttribute('data-label') || btn.textContent;
+    btn.setAttribute('data-label', old);
+    btn.textContent = 'Скопировано ✓';
+    btn.classList.add('done');
+    setTimeout(function () {
+      btn.textContent = old;
+      btn.classList.remove('done');
+    }, 1800);
+  };
+  var fallback = function () {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.left = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    if (ok) { done(); } else { alert('Не удалось скопировать. Выделите текст вручную.'); }
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  } else {
+    fallback();
+  }
+}
+</script>
+</body>
+</html>

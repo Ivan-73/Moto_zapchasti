@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Универсальные запросы КП — Раздел 4. Двигатель, зажигание и сцепление</title>
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#fff; --ink:#1b2430; --muted:#5b6775;
+    --line:#dde3e9; --accent:#0f4c81; --accent2:#e9f1f8;
+    --ok:#1e7a46; --warn:#8a5a00;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 48px;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{background:linear-gradient(135deg,#0f4c81,#123a5c);color:#fff;padding:30px 0 24px;margin-bottom:22px}
+  header h1{margin:0 0 6px;font-size:24px;line-height:1.3}
+  header .date{opacity:.9;font-size:13.5px}
+  .req{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:16px;
+       background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+       border-radius:10px;padding:12px 16px;font-size:13px}
+  .req b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;opacity:.85}
+  section{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          padding:18px 18px 22px;margin:0 0 20px}
+  h2{font-size:19px;margin:0 0 6px;color:var(--accent)}
+  h3{font-size:16px;margin:20px 0 8px}
+  .lead{color:var(--muted);font-size:14px;margin:0 0 12px}
+  .tbl-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+  th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top;text-align:left}
+  th{background:var(--accent2);color:#123a5c;font-size:12.5px;font-weight:600}
+  tr:nth-child(even) td{background:#fbfcfd}
+  a{color:#0b5fa5}
+  .copybox{border:1px solid var(--line);border-radius:10px;margin:12px 0 18px;overflow:hidden}
+  .copyhead{display:flex;align-items:center;justify-content:space-between;gap:12px;
+            background:#f2f6fa;border-bottom:1px solid var(--line);padding:10px 14px}
+  .copyhead span{font-weight:600;font-size:14px;color:#123a5c}
+  button.copy{cursor:pointer;border:1px solid #b9cfe1;background:#fff;color:#0f4c81;
+              border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+  button.copy:hover{background:var(--accent2)}
+  button.copy.done{background:#e4f5ea;border-color:#b9e3c8;color:var(--ok)}
+  .doc{white-space:pre-wrap;word-wrap:break-word;padding:16px 18px;font-size:14px;line-height:1.6}
+  .note{background:#fffaf0;border-left:4px solid #e0a800;padding:10px 14px;
+        border-radius:0 8px 8px 0;margin:12px 0;font-size:13.5px}
+  ul{margin:8px 0 0 20px;padding:0}
+  li{margin:4px 0}
+  .check td:first-child{width:34px;text-align:center;font-size:16px;color:#0f4c81}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;margin-top:22px}
+  @media (max-width:760px){
+    .req{grid-template-columns:1fr}
+    header h1{font-size:20px}
+    .copyhead{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Универсальные запросы КП — Раздел 4. Двигатель, зажигание и сцепление</h1>
+    <div class="date">Дата подготовки: 25 ноября 2026 г. · шаблоны для самостоятельной рассылки поставщикам</div>
+    <div class="req">
+      <div><b>Закупщик</b>天津瑞八国际贸易有限公司<br>Tianjin Ruiba International Trade Co., Ltd.</div>
+      <div><b>Тип</b>有限责任公司（外国自然人独资）</div>
+      <div><b>Профиль</b>摩托车及零配件批发/零售；货物进出口；进出口代理；供应链管理服务；国内贸易代理；汽车零配件批发/零售</div>
+      <div><b>Роль в запросах</b>采购商 — оптовая закупка на внутреннем рынке Китая: цены, наличие, MOQ, сроки производства, аналоги (摩配副厂件)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="where">
+  <h2>Куда отправлять (справочно)</h2>
+  <p class="lead">Поставщики из Справки, Раздел 4. Ссылки ведут на профиль/сайт компании.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:4%">№</th>
+        <th style="width:30%">Название (CN / EN)</th>
+        <th style="width:16%">Локация</th>
+        <th style="width:26%">Профиль</th>
+        <th style="width:24%">Источник</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>上海特殊陶业有限公司<br>Niterra (NGK / NTK) China</td>
+          <td>Шанхай</td>
+          <td>Свечи зажигания NGK, катушки зажигания, датчики NTK; официальное подразделение японской Niterra</td>
+          <td><a href="https://www.niterragroup.com.cn/" target="_blank" rel="noopener">niterragroup.com.cn</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>潍柴火炬科技股份有限公司<br>Weichai Torch Technology Co., Ltd. (TORCH)</td>
+          <td>Чжучжоу, Хунань</td>
+          <td>Свечи зажигания TORCH, датчики, керамика; крупносерийное производство</td>
+          <td><a href="http://www.torchsparkplug.com/" target="_blank" rel="noopener">torchsparkplug.com</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>重庆吉力芸峰实业集团<br>Chongqing Jili Yunfeng Motor Co., Ltd.</td>
+          <td>Чунцин</td>
+          <td>Магнето, стартеры, генераторы, электрокомпоненты двигателя</td>
+          <td><a href="https://en.jl-dz.com/" target="_blank" rel="noopener">en.jl-dz.com</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>杭州临安川伟摩擦材料有限公司<br>Hangzhou Lin'an Chuanwei Friction Material Co., Ltd.</td>
+          <td>Ханчжоу (Линьань), Чжэцзян</td>
+          <td>Диски сцепления (сухие/мокрые), бумажные фрикционы; экспортное подразделение 志兵</td>
+          <td><a href="https://www.mopei8.com/coinfo/mopei/chuanwei.html" target="_blank" rel="noopener">mopei8.com</a></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>温州奋达车辆配件有限公司<br>Wenzhou Fenda Vehicle Parts Co., Ltd.</td>
+          <td>Жуйань (Танся), Чжэцзян</td>
+          <td>Мотоциклетные диски сцепления, комплекты; поставки на моторные заводы</td>
+          <td><a href="http://www.china-fenda.com/" target="_blank" rel="noopener">china-fenda.com</a></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>杭州长命摩擦材料有限公司<br>Hangzhou Changming Friction Material Co., Ltd.</td>
+          <td>Ханчжоу, Чжэцзян</td>
+          <td>Мотоциклетные фрикционные диски, сцепление</td>
+          <td><a href="https://www.mopei8.com/coinfo/chuandong/chuandong-125.html" target="_blank" rel="noopener">mopei8.com</a></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>重庆博森托 / 重庆光明摩托配件有限公司<br>Chongqing Bright Motorparts Co., Ltd.</td>
+          <td>Чунцин</td>
+          <td>Диски сцепления, корзины, комплекты FCC-типа; 20+ лет экспорта</td>
+          <td><a href="https://www.bosento.com/aboutus.html" target="_blank" rel="noopener">bosento.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="t1">
+  <h2>Шаблон запроса №1: Свечи зажигания NGK (оригинал / аналог TORCH)</h2>
+  <p class="lead">Универсальная формулировка подходит и официальному подразделению Niterra, и производителю аналогов. Полный перечень артикулов — в справочной таблице (Приложение 1).</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru1', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru1">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции.
+
+Предмет запроса: свечи зажигания для мотоциклов.
+
+Перечень позиций по сериям NGK:
+— BKR: BKR6E-11, BKR6EIX-11.
+— BPR: BPR7EIX, BPR7ES.
+— CPR: CPR7EA-9, CPR7EAIX-9, CPR8EA-9, CPR8EB-9, CPR9EA-9.
+— CR: CR6HSB-9, CR7E, CR7EIX, CR8E, CR8EB, CR8EH-9, CR8EHIX-9, CR8EIA-9, CR8EIA-10, CR8EIB-10, CR8EIX, CR8EK, CR9E, CR9EH-9, CR9EHIX-9, CR9EIA-9, CR9EIX, CR9EK, CR10EIX, CR10EK.
+— DPR: DPR7EA-9, DPR7EIX-9, DPR8EA-9, DPR8EIX-9, DPR9EA-9, DPR9EIX-9.
+— DR: DR7EA, DR7EIX, DR8EA, DR8EIX, DR9EIX.
+— IFR / IJR / IMR: IFR6G-11K, IFR6L11, IFR8H11, IJR8B9, IMR9A-9H, IMR9B-9H, IMR9C-9H, IMR9C-9HES, IMR9D-9H, IMR9E-9HES.
+— LMAR / MR / R / SILMAR: LMAR8A-9, LMAR8BI-9, LMAR8G, LMAR9E-J, LMAR9G, MR8E-9, R0409B-8, R0451B-8, SILMAR8A9S, SILMAR9A9S, SILMAR9B9, SILMAR10C9S.
+
+Просим предложить оригинал NGK либо качественный аналог с указанием бренда и кросс-номера. Полный перечень артикулов — в Приложении 1.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 100 / 500 / 1 000 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда, артикула и кросс-номера.
+6. Спецификация: калильное число, резьба (M10/M12/M14), длина резьбы, зазор, тип электрода (никель/платина/иридий), сопротивление.
+7. Условия оплаты.
+8. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+9. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «NGK → ваш артикул» с указанием калильных чисел.
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn1', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn1">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项向贵司询价，请予报价。
+
+询价品项：摩托车火花塞。
+
+参考品项（按 NGK 系列）：
+— BKR：BKR6E-11、BKR6EIX-11。
+— BPR：BPR7EIX、BPR7ES。
+— CPR：CPR7EA-9、CPR7EAIX-9、CPR8EA-9、CPR8EB-9、CPR9EA-9。
+— CR：CR6HSB-9、CR7E、CR7EIX、CR8E、CR8EB、CR8EH-9、CR8EHIX-9、CR8EIA-9、CR8EIA-10、CR8EIB-10、CR8EIX、CR8EK、CR9E、CR9EH-9、CR9EHIX-9、CR9EIA-9、CR9EIX、CR9EK、CR10EIX、CR10EK。
+— DPR：DPR7EA-9、DPR7EIX-9、DPR8EA-9、DPR8EIX-9、DPR9EA-9、DPR9EIX-9。
+— DR：DR7EA、DR7EIX、DR8EA、DR8EIX、DR9EIX。
+— IFR / IJR / IMR：IFR6G-11K、IFR6L11、IFR8H11、IJR8B9、IMR9A-9H、IMR9B-9H、IMR9C-9H、IMR9C-9HES、IMR9D-9H、IMR9E-9HES。
+— LMAR / MR / R / SILMAR：LMAR8A-9、LMAR8BI-9、LMAR8G、LMAR9E-J、LMAR9G、MR8E-9、R0409B-8、R0451B-8、SILMAR8A9S、SILMAR9A9S、SILMAR9B9、SILMAR10C9S。
+
+请提供 NGK 原装产品，或同等质量的替代件，并注明品牌及对应料号。完整料号清单见附件一。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 100 / 500 / 1,000 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明品牌、料号及对应型号。
+6. 规格参数：热值、螺纹（M10/M12/M14）、螺纹长度、间隙、电极材质（镍/铂金/铱金）、电阻。
+7. 付款条件。
+8. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+9. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「NGK → 贵司料号」对照表，并注明热值。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+
+  <div class="note"><b>Как адаптировать без отдельного письма:</b> официальному подразделению Niterra (NGK) в ответе уместно дополнительно запросить подтверждение официального канала поставки и гарантию подлинности; производителю аналогов (TORCH) — не утверждать наличие «NGK-аналога» под конкретным номером, а просить кросс-таблицу и калильные числа. Формулировка шаблона это допускает.</div>
+</section>
+
+<section id="t2">
+  <h2>Шаблон запроса №2: Диски сцепления (EBC, Ferodo, TRW, Vesrah)</h2>
+  <p class="lead">Универсальный текст для поставщиков дисков сцепления. Полный перечень артикулов — в справочной таблице (Приложение 1).</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru2', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru2">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: диски сцепления для мотоциклов.
+
+Перечень позиций по брендам-ориентирам:
+— EBC: CK1177, CK1181, CK1190, CK1206, CK1218, CK1230, CK1247, CK1257, CK1265, CK1286, CK1290, CK1303, CK1305, CK1312, CK1317, CK1319, CK2255, CK2309, CK2318, CK2351, CK2352, CK2355, CK2358, CK2367, CK3430, CK3433, CK3451, CK3468, CK4424, CK4435, CK4503, CK4510, CK4514, CK4527.
+— Ferodo: FCD0133, FCD0135, FCD0226, FCD0337, FCD0340.
+— TRW: MCC110-8, MCC115-7, MCC120-8, MCC121-8, MCC122-6, MCC124-9, MCC141-8, MCC145-7, MCC151-7, MCC157-8, MCC158-8, MCC161-9, MCC162-8, MCC205-7, MCC212-9, MCC216-5, MCC229-5, MCC235-8, MCC312-8, MCC314-8, MCC321-7, MCC343-10, MCC347-10, MCC353-8, MCC357-8, MCC361-9, MCC371-9, MCC426-10, MCC438-8, MCC440-8, MCC441-9, MCC443-7, MCC450-9, MCC454-9, MCC455-9, MCC457-9, MCC465-9, MCC468-9.
+— Vesrah: VC-360, VC-463, VC-1004.
+
+Просим указать по каждой позиции:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ): в комплектах и/или в штуках.
+4. Скидки за объём при заказе от 20 / 50 / 100 комплектов.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула аналога.
+6. Спецификация: тип фрикциона (бумажный / кевларовый / органика / спечённый), число дисков в комплекте, наружный и внутренний диаметр, толщина, число шлицев.
+7. Условия оплаты.
+8. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+9. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист и кросс-таблицу «EBC / Ferodo / TRW / Vesrah → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn2', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn2">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：摩托车离合器片。
+
+参考品牌及品项：
+— EBC：CK1177、CK1181、CK1190、CK1206、CK1218、CK1230、CK1247、CK1257、CK1265、CK1286、CK1290、CK1303、CK1305、CK1312、CK1317、CK1319、CK2255、CK2309、CK2318、CK2351、CK2352、CK2355、CK2358、CK2367、CK3430、CK3433、CK3451、CK3468、CK4424、CK4435、CK4503、CK4510、CK4514、CK4527。
+— Ferodo：FCD0133、FCD0135、FCD0226、FCD0337、FCD0340。
+— TRW：MCC110-8、MCC115-7、MCC120-8、MCC121-8、MCC122-6、MCC124-9、MCC141-8、MCC145-7、MCC151-7、MCC157-8、MCC158-8、MCC161-9、MCC162-8、MCC205-7、MCC212-9、MCC216-5、MCC229-5、MCC235-8、MCC312-8、MCC314-8、MCC321-7、MCC343-10、MCC347-10、MCC353-8、MCC357-8、MCC361-9、MCC371-9、MCC426-10、MCC438-8、MCC440-8、MCC441-9、MCC443-7、MCC450-9、MCC454-9、MCC455-9、MCC457-9、MCC465-9、MCC468-9。
+— Vesrah：VC-360、VC-463、VC-1004。
+
+请就每个品项说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 最小起订量（MOQ）：按套和/或按片。
+4. 20 / 50 / 100 套以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明替代品牌及料号。
+6. 规格参数：摩擦材料类型（纸基/凯夫拉/有机/烧结）、每套片数、外径与内径、厚度、齿数。
+7. 付款条件。
+8. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+9. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+
+另请提供产品目录/价格表，以及「EBC / Ferodo / TRW / Vesrah → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="t3">
+  <h2>Шаблон запроса №3: Электрокомпоненты двигателя (магнето, стартеры, генераторы)</h2>
+  <p class="lead">Универсальный запрос на OEM/ODM-поставку. Совместимость запрашивается по типажу и объёму двигателя, без привязки к конкретным брендам мотоциклов.</p>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на русском</span>
+      <button class="copy" onclick="copyText('ru3', this)">Копировать RU</button>
+    </div>
+    <div class="doc" id="ru3">Уважаемые господа,
+
+Компания 天津瑞八国际贸易有限公司 (Tianjin Ruiba International Trade Co., Ltd.) осуществляет оптовую закупку мотоциклетных запчастей на внутреннем рынке Китая и просит направить коммерческое предложение на следующие позиции (или их качественные аналоги).
+
+Предмет запроса: электрокомпоненты двигателя — магнето (статор/ротор), стартеры, генераторы.
+
+Требуемые группы по типажу двигателя:
+— 125–150 см³, одноцилиндровый, воздушное охлаждение.
+— 200–250 см³, одноцилиндровый, воздушное/жидкостное охлаждение.
+— 250–400 см³, одноцилиндровый или параллельный твин.
+— 400–650 см³, параллельный твин.
+
+Просим указать по каждой группе:
+1. Цена за единицу в CNY — с НДС и без НДС (просьба указать ставку налога).
+2. Наличие на складе; при отсутствии — срок производства.
+3. Минимальный заказ (MOQ) по каждой позиции.
+4. Скидки за объём при заказе от 50 / 100 / 500 шт.
+5. Возможность поставки качественного аналога (摩配副厂件) с указанием бренда и артикула аналога.
+6. Возможность OEM/ODM: изготовление под нашу марку по образцу, чертежу или 3D-модели; какие данные требуются.
+7. Технические параметры: напряжение (12 В), мощность, число катушек, тип разъёма, посадочные размеры, масса, направление вращения.
+8. Совместимость по типу и объёму двигателя (без привязки к бренду мотоцикла).
+9. Условия оплаты.
+10. Упаковка: neutral packing или private label (наша торговая марка); стоимость упаковки.
+11. Сертификаты: ISO 9001, IATF 16949 (просьба приложить сканы).
+
+Дополнительно просим приложить каталог/прайс-лист с указанием применяемости по объёму двигателя и кросс-таблицу «тип/объём двигателя → ваш артикул».
+
+Просим направить ответ в течение 5 рабочих дней.
+
+С уважением,
+天津瑞八国际贸易有限公司
+Отдел закупок</div>
+  </div>
+
+  <div class="copybox">
+    <div class="copyhead">
+      <span>Текст на китайском (简体)</span>
+      <button class="copy" onclick="copyText('cn3', this)">Копировать CN</button>
+    </div>
+    <div class="doc" id="cn3">尊敬的采购负责人：
+
+您好！
+
+天津瑞八国际贸易有限公司（Tianjin Ruiba International Trade Co., Ltd.）从事摩托车配件国内批发采购，现就以下品项（或同等质量的替代件）向贵司询价，请予报价。
+
+询价品项：发动机电器件 — 磁电机（定子/转子）、启动电机、发电机。
+
+按发动机排量分类：
+— 125–150cc，单缸，风冷。
+— 200–250cc，单缸，风冷/水冷。
+— 250–400cc，单缸或并列双缸。
+— 400–650cc，并列双缸。
+
+请就每组说明：
+1. 单价（人民币，含税/未税，并注明税率）。
+2. 现货情况及无现货时的生产周期。
+3. 每个品项的最小起订量（MOQ）。
+4. 50 / 100 / 500 件以上订单的数量折扣。
+5. 是否可提供优质替代件（摩配副厂件），请注明替代品牌及料号。
+6. 是否可做 OEM/ODM：按我司品牌、依样品/图纸/3D 模型生产；需要我司提供哪些资料。
+7. 技术参数：电压（12V）、功率、线圈数、接插件型式、安装尺寸、重量、旋转方向。
+8. 按发动机型号及排量的适用性（不限定整车品牌）。
+9. 付款条件。
+10. 包装方式：中性包装或贴牌（我司品牌），并注明包装费用。
+11. 认证资料：ISO 9001、IATF 16949，请附证书扫描件。
+
+另请提供产品目录/价格表（注明按排量的适用性），以及「发动机型号/排量 → 贵司料号」对照表。
+
+请于5个工作日内回复。
+
+此致
+敬礼
+
+天津瑞八国际贸易有限公司
+采购部</div>
+  </div>
+</section>
+
+<section id="ref">
+  <h2>Справочная таблица позиций</h2>
+  <p class="lead">Артикулы приведены как кросс-ориентиры. Для NGK допускается группировка по сериям; полный перечень — в Приложении 1.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th style="width:16%">Бренд</th>
+        <th style="width:66%">Артикул / серия</th>
+        <th style="width:18%">Подкатегория</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>NGK (BKR)</td><td>BKR6E-11, BKR6EIX-11</td><td>Свечи</td></tr>
+        <tr><td>NGK (BPR)</td><td>BPR7EIX, BPR7ES</td><td>Свечи</td></tr>
+        <tr><td>NGK (CPR)</td><td>CPR7EA-9, CPR7EAIX-9, CPR8EA-9, CPR8EB-9, CPR9EA-9</td><td>Свечи</td></tr>
+        <tr><td>NGK (CR)</td><td>CR6HSB-9, CR7E, CR7EIX, CR8E, CR8EB, CR8EH-9, CR8EHIX-9, CR8EIA-9, CR8EIA-10, CR8EIB-10, CR8EIX, CR8EK, CR9E, CR9EH-9, CR9EHIX-9, CR9EIA-9, CR9EIX, CR9EK, CR10EIX, CR10EK</td><td>Свечи</td></tr>
+        <tr><td>NGK (DIMR)</td><td>DIMR8C10</td><td>Свечи</td></tr>
+        <tr><td>NGK (DPR)</td><td>DPR7EA-9, DPR7EIX-9, DPR8EA-9, DPR8EIX-9, DPR9EA-9, DPR9EIX-9</td><td>Свечи</td></tr>
+        <tr><td>NGK (DR)</td><td>DR7EA, DR7EIX, DR8EA, DR8EIX, DR9EIX</td><td>Свечи</td></tr>
+        <tr><td>NGK (IFR)</td><td>IFR6G-11K, IFR6L11, IFR8H11</td><td>Свечи</td></tr>
+        <tr><td>NGK (IJR)</td><td>IJR8B9</td><td>Свечи</td></tr>
+        <tr><td>NGK (IMR)</td><td>IMR9A-9H, IMR9B-9H, IMR9C-9H, IMR9C-9HES, IMR9D-9H, IMR9E-9HES</td><td>Свечи</td></tr>
+        <tr><td>NGK (LMAR)</td><td>LMAR8A-9, LMAR8BI-9, LMAR8G, LMAR9E-J, LMAR9G</td><td>Свечи</td></tr>
+        <tr><td>NGK (MR)</td><td>MR8E-9</td><td>Свечи</td></tr>
+        <tr><td>NGK (R)</td><td>R0409B-8, R0451B-8</td><td>Свечи</td></tr>
+        <tr><td>NGK (SILMAR)</td><td>SILMAR8A9S, SILMAR9A9S, SILMAR9B9, SILMAR10C9S</td><td>Свечи</td></tr>
+
+        <tr><td>EBC</td><td>CK1177, CK1181, CK1190, CK1206, CK1218, CK1230, CK1247, CK1257, CK1265, CK1286, CK1290, CK1303, CK1305, CK1312, CK1317, CK1319, CK2255, CK2309, CK2318, CK2351, CK2352, CK2355, CK2358, CK2367, CK3430, CK3433, CK3451, CK3468, CK4424, CK4435, CK4503, CK4510, CK4514, CK4527</td><td>Сцепление</td></tr>
+        <tr><td>Ferodo</td><td>FCD0133, FCD0135, FCD0226, FCD0337, FCD0340</td><td>Сцепление</td></tr>
+        <tr><td>TRW</td><td>MCC110-8, MCC115-7, MCC120-8, MCC121-8, MCC122-6, MCC124-9, MCC141-8, MCC145-7, MCC151-7, MCC157-8, MCC158-8, MCC161-9, MCC162-8, MCC205-7, MCC212-9, MCC216-5, MCC229-5, MCC235-8, MCC312-8, MCC314-8, MCC321-7, MCC343-10, MCC347-10, MCC353-8, MCC357-8, MCC361-9, MCC371-9, MCC426-10, MCC438-8, MCC440-8, MCC441-9, MCC443-7, MCC450-9, MCC454-9, MCC455-9, MCC457-9, MCC465-9, MCC468-9</td><td>Сцепление</td></tr>
+        <tr><td>Vesrah</td><td>VC-360, VC-463, VC-1004</td><td>Сцепление</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">Для свечей обязательно фиксируйте калильное число и резьбу; для сцепления — тип фрикциона и геометрию (диаметры, толщина, шлицы). Без этих данных поставщик не подтвердит применяемость.</div>
+</section>
+
+<section id="check">
+  <h2>Чек-лист к ответу поставщика</h2>
+  <p class="lead">Проверяйте ответ по пунктам; при отсутствии любого из них запрос считается неполным.</p>
+  <div class="tbl-wrap">
+    <table class="check">
+      <thead><tr>
+        <th>✓</th>
+        <th style="width:30%">Пункт</th>
+        <th style="width:70%">Что должно быть в ответе</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>Цена</td><td>Цена за единицу в CNY, оптовая; отдельно с НДС и без НДС, с указанием ставки</td></tr>
+        <tr><td>☐</td><td>Наличие / срок</td><td>Наличие на складе по каждой позиции; при отсутствии — срок производства в рабочих днях</td></tr>
+        <tr><td>☐</td><td>MOQ</td><td>Минимальный заказ: свечи — шт.; сцепление — комплекты/штуки; электрокомпоненты — шт.</td></tr>
+        <tr><td>☐</td><td>Скидки за объём</td><td>Свечи — 100/500/1 000 шт; сцепление — 20/50/100 компл.; электрокомпоненты — 50/100/500 шт</td></tr>
+        <tr><td>☐</td><td>Аналог (摩配副厂件)</td><td>Конкретный бренд и артикул аналога по каждой позиции; подтверждение применимости</td></tr>
+        <tr><td>☐</td><td>Спецификация</td><td>Свечи: калильное число, резьба, зазор; сцепление: тип фрикциона, число дисков, наружный/внутренний диаметр, толщина</td></tr>
+        <tr><td>☐</td><td>Условия оплаты</td><td>Порядок оплаты (предоплата/по факту/аккредитив), срок действия предложения</td></tr>
+        <tr><td>☐</td><td>Упаковка</td><td>Neutral packing или private label; стоимость упаковки и минимальный тираж для маркировки</td></tr>
+        <tr><td>☐</td><td>Сертификаты</td><td>ISO 9001, IATF 16949 — сканы с действующим сроком и областью действия</td></tr>
+        <tr><td>☐</td><td>Каталог и кросс-таблица</td><td>Прайс-лист/каталог и таблица «NGK / EBC / Ferodo / TRW / Vesrah → ваш артикул»</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Шаблоны универсальные: перед отправкой проверьте комплектность артикулов и при необходимости приложите справочную таблицу. Тексты не содержат условий доставки и расчётов за пределами внутреннего рынка Китая.
+</footer>
+
+</div>
+
+<script>
+function copyText(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var text = el.innerText;
+  var done = function () {
+    var old = btn.getAttribute('data-label') || btn.textContent;
+    btn.setAttribute('data-label', old);
+    btn.textContent = 'Скопировано ✓';
+    btn.classList.add('done');
+    setTimeout(function () {
+      btn.textContent = old;
+      btn.classList.remove('done');
+    }, 1800);
+  };
+  var fallback = function () {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.left = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    if (ok) { done(); } else { alert('Не удалось скопировать. Выделите текст вручную.'); }
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  } else {
+    fallback();
+  }
+}
+</script>
+</body>
+</html>
